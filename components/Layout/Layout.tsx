@@ -11,7 +11,7 @@ function Layout({ children }: LayoutProps) {
       <Meta />
       <main
         className="
-        flex flex-col items-center min-h-screen"
+        flex flex-col items-center min-h-screen font-sans-serif"
       >
         {children}
       </main>
