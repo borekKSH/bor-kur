@@ -1,5 +1,8 @@
 import React from "react";
 import Meta from "../Meta";
+import Navbar from "../Navbar";
+import DarkThemeSwitcher from "../DarkThemeSwitcher";
+import LocaleSwitcher from "../LocaleSwitcher";
 
 type LayoutProps = {
   children: React.ReactNode;
@@ -9,11 +12,20 @@ function Layout({ children }: LayoutProps) {
   return (
     <>
       <Meta />
+      <Navbar />
       <main
         className="
-        flex flex-col items-center min-h-screen font-sans-serif"
+        flex flex-col items-center min-h-screen font-sans-serif bg-gradient-to-tr from-sky-50 to-sky-100 dark:from-sky-600 dark:to-sky-900"
       >
         {children}
+        <div
+          className="
+          fixed bottom-6 right-6 grid gap-3 z-40
+          md:hidden"
+        >
+          <DarkThemeSwitcher />
+          <LocaleSwitcher />
+        </div>
       </main>
     </>
   );

@@ -3,3 +3,15 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+  /* *,
+  *::before,
+  *::after {
+    outline: 1px dashed magenta;
+  } */
+
+  *:focus-visible {
+    @apply outline-yellow-400 outline rounded-md outline-offset-1;
+  }
+}
