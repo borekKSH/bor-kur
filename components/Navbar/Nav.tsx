@@ -1,12 +1,16 @@
 import React from "react";
+import { INavbar } from "../../types/generated/contentful";
 import NavLink from "./NavItem";
 
 type NavProps = {
+  content: INavbar;
   opened: boolean;
   clickHandler: () => void;
 };
 
-function Nav({ opened, clickHandler }: NavProps) {
+function Nav({ content, opened, clickHandler }: NavProps) {
+  const { about, contact } = content.fields;
+
   return (
     <nav
       className={`
@@ -22,9 +26,8 @@ function Nav({ opened, clickHandler }: NavProps) {
         md:flex-row md:gap-3
         lg:gap-8"
       >
-        <NavLink title="O nas" destination="#" clickHandler={clickHandler} />
-        <NavLink title="Galeria" destination="#" clickHandler={clickHandler} />
-        <NavLink title="Kontakt" destination="#" clickHandler={clickHandler} />
+        <NavLink title={about} destination="#about" clickHandler={clickHandler} />
+        <NavLink title={contact} destination="#contact" clickHandler={clickHandler} />
       </ul>
     </nav>
   );

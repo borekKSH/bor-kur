@@ -2,21 +2,20 @@ import React from "react";
 import Link from "next/link";
 import Image from "next/image";
 import logo from "../../public/logo.svg";
+import { INavbar } from "../../types/generated/contentful";
 
 type LogoProps = {
+  content: INavbar;
   clickHandler: () => void;
 };
 
-function Logo({ clickHandler }: LogoProps) {
+function Logo({ content, clickHandler }: LogoProps) {
+  const { logoAlternativeText } = content.fields;
+
   return (
     <Link href="/#hero" passHref>
       <a className="inline-flex gap-6 items-center" onClick={clickHandler}>
-        <Image
-          src={logo}
-          width={48}
-          height={48}
-          alt="Logo of the company, which is a yellow chicken."
-        />
+        <Image src={logo} width={48} height={48} alt={logoAlternativeText} />
         <h1
           className="
           text-xl font-bold text-neutral-900 select-none

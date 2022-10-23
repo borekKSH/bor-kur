@@ -3,8 +3,17 @@ import Image from "next/future/image";
 import Cta from "../Cta";
 
 import imageHero from "../../public/images/baby-chicks-landscape.jpg";
+import { ISectionHero } from "../../types/generated/contentful";
 
-function Hero() {
+type HeroProps = {
+  content: ISectionHero;
+};
+
+function Hero({ content }: HeroProps) {
+  const { title, paragraph, ctaContact, imageAlternativeText } = content.fields;
+
+  const [firstTitleWord, secondTitleWord] = title.split(" ");
+
   return (
     <section
       className="
@@ -31,8 +40,8 @@ function Hero() {
             sm:text-6xl
             xl:text-7xl xl:text-left"
           >
-            Nowoczesna
-            <span className="text-yellow-400"> hodowla.</span>
+            {firstTitleWord}
+            <span className="text-yellow-400"> {secondTitleWord}</span>
           </h2>
           <p
             className="
@@ -40,10 +49,9 @@ function Hero() {
             sm:text-xl
             xl:text-left"
           >
-            Nasze zaangażowanie w chów i hodowlę zapewnia najlepsze warunki rozwoju, a dobrostan i
-            zdrowie stad są dla nas priorytetem.
+            {paragraph}
           </p>
-          <Cta destination="#contact" text="Skontaktuj sie z nami!" />
+          <Cta text={ctaContact} destination="#contact" />
         </div>
       </div>
       <div
@@ -54,7 +62,7 @@ function Hero() {
       >
         <Image
           src={imageHero}
-          alt="Baby chicken on grass."
+          alt={imageAlternativeText}
           className="h-full object-cover object-right"
           placeholder="blur"
           priority

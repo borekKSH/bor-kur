@@ -3,16 +3,17 @@ import { IconWorld } from "@tabler/icons";
 import { CircleButton } from "../Buttons";
 
 type LocaleSwitcherProps = {
+  title: string;
   className?: string;
 };
 
-function LocaleSwitcher({ className }: LocaleSwitcherProps) {
+function LocaleSwitcher({ title, className }: LocaleSwitcherProps) {
   const handleClick = () => {};
 
   return (
     <CircleButton
       className={className}
-      title="Change language"
+      title={title}
       icon={<IconWorld />}
       clickHandler={handleClick}
     />

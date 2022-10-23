@@ -9,11 +9,12 @@ enum Themes {
   LIGHT = "light",
 }
 
-type DarkThemeSwitcherProps = {
+type ThemeSwitcherProps = {
+  title: string;
   className?: string;
 };
 
-function DarkThemeSwitcher({ className }: DarkThemeSwitcherProps) {
+function ThemeSwitcher({ title, className }: ThemeSwitcherProps) {
   const [mounted, setMounted] = useState(false);
   const { systemTheme, theme, setTheme } = useTheme();
 
@@ -43,15 +44,15 @@ function DarkThemeSwitcher({ className }: DarkThemeSwitcherProps) {
   return (
     <CircleButton
       className={className}
-      title="Toggle dark mode"
+      title={title}
       icon={getIconBasedOnTheme()}
       clickHandler={handleClick}
     />
   );
 }
 
-DarkThemeSwitcher.defaultProps = {
+ThemeSwitcher.defaultProps = {
   className: "",
 };
 
-export default DarkThemeSwitcher;
+export default ThemeSwitcher;
