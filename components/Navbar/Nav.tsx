@@ -12,7 +12,7 @@ function Nav({ opened, clickHandler }: NavProps) {
       className={`
       ${opened ? "scale-x-100 opacity-100" : "scale-x-0 opacity-0"}
         absolute grid place-items-center inset-0 h-screen transition origin-right
-         bg-white/90 shadow-md dark:bg-slate-800/90 backdrop-blur-md px-8
+         bg-white/90 shadow-md dark:bg-neutral-900/90 backdrop-blur-md px-8
         md:rounded-full md:static md:h-auto md:scale-x-100 md:transform-none md:opacity-100 md:transition-none
       `}
     >
@@ -22,9 +22,9 @@ function Nav({ opened, clickHandler }: NavProps) {
         md:flex-row md:gap-3
         lg:gap-8"
       >
-        <NavLink title="O nas." destination="#" clickHandler={clickHandler} />
-        <NavLink title="Galeria." destination="#" clickHandler={clickHandler} />
-        <NavLink title="Kontakt." destination="#" clickHandler={clickHandler} />
+        <NavLink title="O nas" destination="#" clickHandler={clickHandler} />
+        <NavLink title="Galeria" destination="#" clickHandler={clickHandler} />
+        <NavLink title="Kontakt" destination="#" clickHandler={clickHandler} />
       </ul>
     </nav>
   );

@@ -15,3 +15,9 @@
     @apply outline-yellow-400 outline rounded-md outline-offset-1;
   }
 }
+
+@layer utilities {
+  .trapezoid {
+    clip-path: polygon(20% 0%, 100% 0, 100% 100%, 0% 100%);
+  }
+}

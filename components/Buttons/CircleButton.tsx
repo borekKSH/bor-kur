@@ -12,7 +12,7 @@ function CircleButton({ className = "", title, icon, clickHandler }: CircleButto
     <button
       className={`
       ${className} 
-      text-neutral-900 w-11 h-11 bg-white/90 dark:bg-slate-800/90 dark:text-white dark:hover:text-yellow-400
+      text-neutral-900 w-11 h-11 bg-white/90 dark:bg-neutral-900/90 dark:text-white dark:hover:text-yellow-400
         backdrop-blur-md rounded-full shadow-md grid place-items-center transition-colors hover:text-yellow-400`}
       type="button"
       title={title}

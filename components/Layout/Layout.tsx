@@ -15,7 +15,7 @@ function Layout({ children }: LayoutProps) {
       <Navbar />
       <main
         className="
-        flex flex-col items-center min-h-screen font-sans-serif bg-gradient-to-tr from-sky-50 to-sky-100 dark:from-sky-600 dark:to-sky-900"
+        flex flex-col items-center min-h-screen font-sans-serif scroll-smooth"
       >
         {children}
         <div
