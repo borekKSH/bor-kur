@@ -1,6 +1,6 @@
 import React from "react";
 import { INavbar } from "../../types/generated/contentful";
-import NavLink from "./NavItem";
+import NavLink from "./NavLink";
 
 type NavProps = {
   content: INavbar;

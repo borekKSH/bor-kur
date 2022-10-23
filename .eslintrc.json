@@ -22,8 +22,8 @@
   "plugins": [
     "react",
     "prettier",
-    "tailwindcss",
-    "@typescript-eslint"
+    "@typescript-eslint",
+    "tailwindcss"
   ],
   "rules": {
     "no-shadow": "off",
