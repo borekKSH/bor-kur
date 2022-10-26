@@ -3,17 +3,19 @@ import { createClient } from "contentful";
 import { IPageHome } from "../types/generated/contentful";
 import Layout from "../components/Layout";
 import Hero from "../components/Hero";
+import OurValues from "../components/OurValues";
 
 type HomePageProps = {
   content: IPageHome;
 };
 
 function HomePage({ content }: HomePageProps) {
-  const { hero, navbar } = content.fields;
+  const { hero, navbar, ourValues } = content.fields;
 
   return (
     <Layout navbarContent={navbar}>
       <Hero content={hero} />
+      <OurValues content={ourValues} />
     </Layout>
   );
 }

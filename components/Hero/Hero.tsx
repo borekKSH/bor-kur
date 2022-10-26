@@ -17,17 +17,16 @@ function Hero({ content }: HeroProps) {
   return (
     <section
       className="
-      bg-yellow-50 dark:bg-neutral-800 transition
-      pt-12 relative flex flex-col
-      xl:w-full xl:pt-0 xl:flex-row xl:items-center xl:min-h-screen"
+      bg-yellow-50 dark:bg-neutral-800 transition z-10 fixed
+      pt-12 flex flex-col h-screen
+      xl:w-full xl:pt-0 xl:flex-row xl:items-center"
       aria-label="Hero"
-      id="hero"
     >
       <div
         className="
         max-w-container w-full py-24 px-8
         md:py-32
-        xl:bg-none xl:py-0 xl:mx-auto"
+        xl:py-0 xl:mx-auto"
       >
         <div
           className="

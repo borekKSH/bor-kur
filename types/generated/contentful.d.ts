@@ -43,6 +43,9 @@ export interface IPageHomeFields {
 
   /** Hero */
   hero: ISectionHero;
+
+  /** Our Values */
+  ourValues: ISectionOurValues;
 }
 
 export interface IPageHome extends Entry<IPageHomeFields> {
@@ -93,7 +96,60 @@ export interface ISectionHero extends Entry<ISectionHeroFields> {
   };
 }
 
-export type CONTENT_TYPE = "navbar" | "pageHome" | "sectionHero";
+export interface ISectionOurValuesFields {
+  /** title */
+  title: string;
+
+  /** People - Title */
+  peopleTitle: string;
+
+  /** People - Paragraph */
+  peopleParagraph: string;
+
+  /** People - Image alternative text */
+  peopleImageAlternativeText: string;
+
+  /** Growth - Title */
+  growthTitle: string;
+
+  /** Growth - Paragraph */
+  growthParagraph: string;
+
+  /** Growth - Image alternative text */
+  growthImageAlternativeText: string;
+
+  /** Quality - Title */
+  qualityTitle: string;
+
+  /** Quality - Paragraph */
+  qualityParagraph: string;
+
+  /** Quality - Image alternative text */
+  qualityImageAlternativeText: string;
+}
+
+export interface ISectionOurValues extends Entry<ISectionOurValuesFields> {
+  sys: {
+    id: string;
+    type: string;
+    createdAt: string;
+    updatedAt: string;
+    locale: string;
+    contentType: {
+      sys: {
+        id: "sectionOurValues";
+        linkType: "ContentType";
+        type: "Link";
+      };
+    };
+  };
+}
+
+export type CONTENT_TYPE =
+  | "navbar"
+  | "pageHome"
+  | "sectionHero"
+  | "sectionOurValues";
 
 export type LOCALE_CODE = "en-US" | "pl-PL";
 

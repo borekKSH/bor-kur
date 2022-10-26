@@ -11,6 +11,10 @@
     outline: 1px dashed magenta;
   } */
 
+  html {
+    scroll-behavior: smooth;
+  }
+
   *:focus-visible {
     @apply outline-yellow-400 outline rounded-md outline-offset-1;
   }
