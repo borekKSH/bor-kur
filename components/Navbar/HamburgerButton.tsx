@@ -8,10 +8,9 @@ type HamburgerButtonProps = {
 
 function HamburgerButton({ opened, setOpened }: HamburgerButtonProps) {
   return (
-    <i className="md:hidden">
+    <i className="text-neutral-900 dark:text-yellow-400 transition-colors md:hidden">
       <Hamburger
         rounded
-        color="white"
         direction="left"
         toggled={opened}
         toggle={setOpened}
