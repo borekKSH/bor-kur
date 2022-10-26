@@ -19,7 +19,7 @@ function Layout({ navbarContent, children }: LayoutProps) {
       <Navbar content={navbarContent} />
       <main
         className="
-        flex flex-col items-center min-h-screen font-sans-serif scroll-smooth"
+        flex flex-col items-center min-h-screen font-sans-serif scroll-smooth bg-yellow-100 dark:bg-neutral-800 transition"
       >
         {children}
         <div

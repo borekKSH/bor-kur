@@ -17,8 +17,8 @@ function Hero({ content }: HeroProps) {
   return (
     <section
       className="
-      bg-yellow-100 dark:bg-neutral-800 transition
-      pt-24 h-[calc(100vh-6rem)] relative flex flex-col
+      bg-yellow-50 dark:bg-neutral-800 transition
+      pt-12 relative flex flex-col
       xl:w-full xl:pt-0 xl:flex-row xl:items-center xl:min-h-screen"
       aria-label="Hero"
       id="hero"
@@ -41,7 +41,10 @@ function Hero({ content }: HeroProps) {
             xl:text-7xl xl:text-left"
           >
             {firstTitleWord}
-            <span className="text-yellow-400"> {secondTitleWord}</span>
+            <span className="text-yellow-900 dark:text-yellow-400 transition-colors">
+              {" "}
+              {secondTitleWord}
+            </span>
           </h2>
           <p
             className="
@@ -64,7 +67,6 @@ function Hero({ content }: HeroProps) {
           src={imageHero}
           alt={imageAlternativeText}
           className="h-full object-cover object-right"
-          placeholder="blur"
           priority
         />
       </div>
