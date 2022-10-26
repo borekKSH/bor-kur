@@ -20,7 +20,12 @@ function Navbar({ content }: NavbarProps) {
   };
 
   return (
-    <header className="fixed max-w-container w-full top-0 left-1/2 -translate-x-1/2 z-40 flex justify-between items-center px-8 py-6">
+    <header
+      className="
+      fixed max-w-container w-full top-0 left-1/2 -translate-x-1/2 z-40 px-8 py-6
+        flex justify-between items-center dark:bg-gradient-to-b dark:from-neutral-900 to-transparent 
+      md:dark:bg-none"
+    >
       <Logo content={content} clickHandler={handleClick} />
       <div
         className="
