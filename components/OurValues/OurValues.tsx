@@ -35,8 +35,8 @@ function OurValues({ content }: OurValuesProps) {
       id="about"
     >
       <div
-        className="max-w-container w-full py-32 px-8 grid gap-11 place-items-center mx-auto
-        xl:gap-24 xl:py-48"
+        className="py-28 max-w-container w-full px-8 grid gap-11 place-items-center mx-auto
+        xl:gap-24"
       >
         <h2
           className="text-4xl font-bold tracking-tight text-neutral-900 transition dark:text-white text-center

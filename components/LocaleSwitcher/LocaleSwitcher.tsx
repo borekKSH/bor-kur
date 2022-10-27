@@ -38,11 +38,11 @@ function LocaleSwitcher({ title, className }: LocaleSwitcherProps) {
       />
       <ul
         className={`
-        ${opened ? "scale-100 opacity-100" : "scale-0 opacity-0"}
-        transition grid gap-2 px-8 py-4 z-50 bg-white/90
+        ${opened ? "visible scale-100 opacity-100" : "invisible scale-0 opacity-0"}
+        transition-all grid gap-2 px-8 py-4 z-50 bg-white/90
           shadow-md dark:bg-neutral-900/90 backdrop-blur-md rounded w-max origin-bottom-right
         absolute -left-3 -translate-x-full bottom-0
-        xl:left-auto xl:translate-x-0 xl:-bottom-3 xl:right-0 xl:translate-y-full xl:origin-top-right`}
+        md:left-auto md:translate-x-0 md:-bottom-3 md:right-0 md:translate-y-full md:origin-top-right`}
       >
         <li>
           <Link locale={Locales.ENGLISH} passHref href="" scroll={false}>

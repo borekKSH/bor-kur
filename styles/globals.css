@@ -14,10 +14,6 @@
   html {
     scroll-behavior: smooth;
   }
-
-  *:focus-visible {
-    @apply outline-yellow-400 outline rounded-md outline-offset-1;
-  }
 }
 
 @layer utilities {

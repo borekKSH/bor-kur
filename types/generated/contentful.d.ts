@@ -46,6 +46,9 @@ export interface IPageHomeFields {
 
   /** Our Values */
   ourValues: ISectionOurValues;
+
+  /** Contact */
+  contact: ISectionContact;
 }
 
 export interface IPageHome extends Entry<IPageHomeFields> {
@@ -58,6 +61,58 @@ export interface IPageHome extends Entry<IPageHomeFields> {
     contentType: {
       sys: {
         id: "pageHome";
+        linkType: "ContentType";
+        type: "Link";
+      };
+    };
+  };
+}
+
+export interface ISectionContactFields {
+  /** Title */
+  title: string;
+
+  /** Email */
+  email: string;
+
+  /** Email placeholder */
+  emailPlaceholder: string;
+
+  /** Message */
+  message: string;
+
+  /** Message placeholder */
+  messagePlaceholder: string;
+
+  /** Submit */
+  submit: string;
+
+  /** Empty field message */
+  emptyFieldMessage: string;
+
+  /** Invalid email message */
+  invalidEmailMessage: string;
+
+  /** Form action link */
+  formActionLink: string;
+
+  /** Email subject */
+  emailSubject: string;
+
+  /** Thank you page URL */
+  thankYouPageUrl: string;
+}
+
+export interface ISectionContact extends Entry<ISectionContactFields> {
+  sys: {
+    id: string;
+    type: string;
+    createdAt: string;
+    updatedAt: string;
+    locale: string;
+    contentType: {
+      sys: {
+        id: "sectionContact";
         linkType: "ContentType";
         type: "Link";
       };
@@ -148,6 +203,7 @@ export interface ISectionOurValues extends Entry<ISectionOurValuesFields> {
 export type CONTENT_TYPE =
   | "navbar"
   | "pageHome"
+  | "sectionContact"
   | "sectionHero"
   | "sectionOurValues";
 
