@@ -4,10 +4,10 @@ import Nav from "./Nav";
 import ThemeSwitcher from "../ThemeSwitcher";
 import LocaleSwitcher from "../LocaleSwitcher";
 import HamburgerButton from "./HamburgerButton";
-import { INavbar } from "../../types/generated/contentful";
+import { ILayout } from "../../types/generated/contentful";
 
 type NavbarProps = {
-  content: INavbar;
+  content: ILayout;
 };
 
 function Navbar({ content }: NavbarProps) {

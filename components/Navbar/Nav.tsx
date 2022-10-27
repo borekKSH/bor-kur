@@ -1,9 +1,9 @@
 import React from "react";
-import { INavbar } from "../../types/generated/contentful";
+import { ILayout } from "../../types/generated/contentful";
 import NavLink from "./NavLink";
 
 type NavProps = {
-  content: INavbar;
+  content: ILayout;
   opened: boolean;
   clickHandler: () => void;
 };

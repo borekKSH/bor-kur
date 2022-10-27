@@ -11,10 +11,10 @@ type HomePageProps = {
 };
 
 function HomePage({ content }: HomePageProps) {
-  const { hero, navbar, ourValues, contact } = content.fields;
+  const { hero, layout, ourValues, contact } = content.fields;
 
   return (
-    <Layout navbarContent={navbar}>
+    <Layout content={layout}>
       <Hero content={hero} />
       <OurValues content={ourValues} />
       <Contact content={contact} />

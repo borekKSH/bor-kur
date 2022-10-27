@@ -3,26 +3,28 @@ import Meta from "../Meta";
 import Navbar from "../Navbar";
 import ThemeSwitcher from "../ThemeSwitcher";
 import LocaleSwitcher from "../LocaleSwitcher";
-import { INavbar } from "../../types/generated/contentful";
+import Footer from "../Footer";
+import { ILayout } from "../../types/generated/contentful";
 
 type LayoutProps = {
-  navbarContent: INavbar;
+  content: ILayout;
   children: React.ReactNode;
 };
 
-function Layout({ navbarContent, children }: LayoutProps) {
-  const { themeSwitcherTitle, localeSwitcherTitle } = navbarContent.fields;
+function Layout({ content, children }: LayoutProps) {
+  const { themeSwitcherTitle, localeSwitcherTitle } = content.fields;
 
   return (
     <>
       <Meta />
-      <Navbar content={navbarContent} />
-      <main
+      <Navbar content={content} />
+      <div
         className="
-        flex flex-col items-center min-h-screen font-sans-serif"
+        grid min-h-screen font-sans-serif"
         id="top"
       >
-        {children}
+        <main className="grid w-full">{children}</main>
+        <Footer content={content} />
         <div
           className="
           fixed bottom-6 right-6 grid gap-3 z-40
@@ -31,7 +33,7 @@ function Layout({ navbarContent, children }: LayoutProps) {
           <ThemeSwitcher title={themeSwitcherTitle} />
           <LocaleSwitcher title={localeSwitcherTitle} />
         </div>
-      </main>
+      </div>
     </>
   );
 }

@@ -3,7 +3,7 @@
 import { Asset, Entry } from "contentful";
 import { Document } from "@contentful/rich-text-types";
 
-export interface INavbarFields {
+export interface ILayoutFields {
   /** Logo alternative text */
   logoAlternativeText: string;
 
@@ -20,7 +20,7 @@ export interface INavbarFields {
   localeSwitcherTitle: string;
 }
 
-export interface INavbar extends Entry<INavbarFields> {
+export interface ILayout extends Entry<ILayoutFields> {
   sys: {
     id: string;
     type: string;
@@ -29,7 +29,7 @@ export interface INavbar extends Entry<INavbarFields> {
     locale: string;
     contentType: {
       sys: {
-        id: "navbar";
+        id: "layout";
         linkType: "ContentType";
         type: "Link";
       };
@@ -38,8 +38,8 @@ export interface INavbar extends Entry<INavbarFields> {
 }
 
 export interface IPageHomeFields {
-  /** Navbar */
-  navbar: INavbar;
+  /** Layout */
+  layout: ILayout;
 
   /** Hero */
   hero: ISectionHero;
@@ -201,7 +201,7 @@ export interface ISectionOurValues extends Entry<ISectionOurValuesFields> {
 }
 
 export type CONTENT_TYPE =
-  | "navbar"
+  | "layout"
   | "pageHome"
   | "sectionContact"
   | "sectionHero"
