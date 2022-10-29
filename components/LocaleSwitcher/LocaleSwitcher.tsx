@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useRouter } from "next/router";
 import Link from "next/link";
 import Image from "next/image";
 import { IconWorld } from "@tabler/icons";
@@ -19,6 +20,8 @@ enum Locales {
 
 function LocaleSwitcher({ title, className }: LocaleSwitcherProps) {
   const [opened, setOpened] = useState(false);
+
+  const { pathname, query } = useRouter();
 
   const handleButtonClick = () => {
     setOpened((state) => !state);
@@ -45,7 +48,7 @@ function LocaleSwitcher({ title, className }: LocaleSwitcherProps) {
         md:left-auto md:translate-x-0 md:-bottom-3 md:right-0 md:translate-y-full md:origin-top-right`}
       >
         <li>
-          <Link locale={Locales.ENGLISH} passHref href="" scroll={false}>
+          <Link href={{ pathname, query }} locale={Locales.ENGLISH} passHref scroll={false}>
             <a
               className="text-xl flex gap-4 justify-between w-full transition-colors text-neutral-900 hover:text-yellow-400 dark:text-white dark:hover:text-yellow-400"
               onClick={handleLinkClick}
@@ -61,7 +64,7 @@ function LocaleSwitcher({ title, className }: LocaleSwitcherProps) {
           </Link>
         </li>
         <li>
-          <Link locale={Locales.POLISH} passHref href="" scroll={false}>
+          <Link href={{ pathname, query }} locale={Locales.POLISH} passHref scroll={false}>
             <a
               className="text-xl flex gap-4 justify-between w-full transition-colors text-neutral-900 hover:text-yellow-400 dark:text-white dark:hover:text-yellow-400"
               onClick={handleLinkClick}

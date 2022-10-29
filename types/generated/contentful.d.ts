@@ -68,6 +68,59 @@ export interface IPageHome extends Entry<IPageHomeFields> {
   };
 }
 
+export interface IPageSecretLinkFields {
+  /** Layout */
+  layout: ILayout;
+
+  /** Section - Secret link form */
+  sectionSecretLinkForm: ISectionSecretLinkForm;
+}
+
+export interface IPageSecretLink extends Entry<IPageSecretLinkFields> {
+  sys: {
+    id: string;
+    type: string;
+    createdAt: string;
+    updatedAt: string;
+    locale: string;
+    contentType: {
+      sys: {
+        id: "pageSecretLink";
+        linkType: "ContentType";
+        type: "Link";
+      };
+    };
+  };
+}
+
+export interface ISecretLinksFields {
+  /** Slug */
+  slug: string;
+
+  /** Password */
+  password?: string | undefined;
+
+  /** URL */
+  url: string;
+}
+
+export interface ISecretLinks extends Entry<ISecretLinksFields> {
+  sys: {
+    id: string;
+    type: string;
+    createdAt: string;
+    updatedAt: string;
+    locale: string;
+    contentType: {
+      sys: {
+        id: "secretLinks";
+        linkType: "ContentType";
+        type: "Link";
+      };
+    };
+  };
+}
+
 export interface ISectionContactFields {
   /** Title */
   title: string;
@@ -200,12 +253,53 @@ export interface ISectionOurValues extends Entry<ISectionOurValuesFields> {
   };
 }
 
+export interface ISectionSecretLinkFormFields {
+  /** Title */
+  title: string;
+
+  /** Password */
+  password: string;
+
+  /** Password placeholder */
+  passwordPlaceholder: string;
+
+  /** Submit */
+  submit: string;
+
+  /** Empty field message */
+  emptyFieldMessage: string;
+
+  /** Wrong password message */
+  wrongPasswordMessage: string;
+}
+
+export interface ISectionSecretLinkForm
+  extends Entry<ISectionSecretLinkFormFields> {
+  sys: {
+    id: string;
+    type: string;
+    createdAt: string;
+    updatedAt: string;
+    locale: string;
+    contentType: {
+      sys: {
+        id: "sectionSecretLinkForm";
+        linkType: "ContentType";
+        type: "Link";
+      };
+    };
+  };
+}
+
 export type CONTENT_TYPE =
   | "layout"
   | "pageHome"
+  | "pageSecretLink"
+  | "secretLinks"
   | "sectionContact"
   | "sectionHero"
-  | "sectionOurValues";
+  | "sectionOurValues"
+  | "sectionSecretLinkForm";
 
 export type LOCALE_CODE = "en-US" | "pl-PL";
 

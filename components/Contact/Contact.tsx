@@ -1,6 +1,6 @@
 import React from "react";
 import { ISectionContact } from "../../types/generated/contentful";
-import ContactForm from "../ContactForm";
+import Form from "../Form";
 
 type ContactProps = {
   content: ISectionContact;
@@ -27,7 +27,7 @@ function Contact({ content }: ContactProps) {
         >
           {title}
         </h2>
-        <ContactForm content={content} />
+        <Form content={content} />
       </div>
     </section>
   );

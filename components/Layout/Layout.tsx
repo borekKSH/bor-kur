@@ -20,7 +20,7 @@ function Layout({ content, children }: LayoutProps) {
       <Navbar content={content} />
       <div
         className="
-        grid min-h-screen font-sans-serif"
+        grid min-h-screen font-sans-serif bg-yellow-50 dark:bg-neutral-800 transition-colors"
         id="top"
       >
         <main className="grid w-full">{children}</main>

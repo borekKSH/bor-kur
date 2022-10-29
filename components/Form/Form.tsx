@@ -13,11 +13,11 @@ enum ValidationErrors {
   EMAIL = "EMAIL",
 }
 
-type ContactFormProps = {
+type FormProps = {
   content: ISectionContact;
 };
 
-function ContactForm({ content }: ContactFormProps) {
+function Form({ content }: FormProps) {
   const {
     formActionLink,
     email,
@@ -98,4 +98,4 @@ function ContactForm({ content }: ContactFormProps) {
   );
 }
 
-export default ContactForm;
+export default Form;

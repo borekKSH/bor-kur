@@ -1,4 +1,5 @@
 import React from "react";
+import { useRouter } from "next/router";
 import Link from "next/link";
 
 type NavLinkProps = {
@@ -14,14 +15,19 @@ function NavLink({ title, destination, clickHandler }: NavLinkProps) {
   md:text-base
   lg:text-lg`;
 
+  const { pathname } = useRouter();
+
+  const isUserOnHomepage = pathname === "/";
+  const isDestinationAnId = destination.charAt(0) === "#";
+
   return (
     <li>
-      {destination.charAt(0) === "#" ? (
+      {isUserOnHomepage && isDestinationAnId ? (
         <a href={destination} className={linkClassNames} onClick={clickHandler}>
           {title}
         </a>
       ) : (
-        <Link href={destination} passHref>
+        <Link href={isDestinationAnId ? `/${destination}` : destination} passHref>
           <a className={linkClassNames} onClick={clickHandler}>
             {title}
           </a>
