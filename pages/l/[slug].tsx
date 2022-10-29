@@ -54,7 +54,7 @@ function LinkRedirectPage({ content }: LinkRedirectPageProps) {
   });
 
   return (
-    <Layout content={layout}>
+    <Layout content={layout} noindex nofollow>
       <div className="px-8 h-screen flex flex-col items-center justify-center gap-12">
         <h2
           className="

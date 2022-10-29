@@ -8,15 +8,17 @@ import { ILayout } from "../../types/generated/contentful";
 
 type LayoutProps = {
   content: ILayout;
+  noindex?: boolean;
+  nofollow?: boolean;
   children: React.ReactNode;
 };
 
-function Layout({ content, children }: LayoutProps) {
+function Layout({ content, noindex = false, nofollow = false, children }: LayoutProps) {
   const { themeSwitcherTitle, localeSwitcherTitle } = content.fields;
 
   return (
     <>
-      <Meta />
+      <Meta noindex={noindex} nofollow={nofollow} />
       <Navbar content={content} />
       <div
         className="
@@ -37,5 +39,10 @@ function Layout({ content, children }: LayoutProps) {
     </>
   );
 }
+
+Layout.defaultProps = {
+  noindex: false,
+  nofollow: false,
+};
 
 export default Layout;

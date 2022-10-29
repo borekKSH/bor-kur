@@ -4,12 +4,14 @@ module.exports = {
   generateRobotsTxt: true,
   robotsTxtOptions: {
     policies: [
+      { userAgent: '*', disallow: '/l/*/' },
+      { userAgent: '*', disallow: '/en-US/l/*/' },
       { userAgent: '*', disallow: '/404' },
+      { userAgent: '*', disallow: '/en-US/404' },
       { userAgent: '*', disallow: '/thank-you' },
-      { userAgent: '*', disallow: '/pl-PL/404' },
-      { userAgent: '*', disallow: '/pl-PL/thank-you' },
+      { userAgent: '*', disallow: '/en-US/thank-you' },
       { userAgent: '*', allow: '/' },
     ],
   },
-  exclude: ['/404', 'thank-you', '/pl-PL/404', '/pl-PL/thank-you'],
+  exclude: ['/l/*/', '/en-US/l/*/', '/404', 'thank-you', '/en-US/404', '/en-US/thank-you'],
 };

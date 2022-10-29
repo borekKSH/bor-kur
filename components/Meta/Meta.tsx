@@ -8,7 +8,12 @@ enum Locales {
   en = "en-US",
 }
 
-function Meta() {
+type MetaProps = {
+  noindex: boolean;
+  nofollow: boolean;
+};
+
+function Meta({ noindex, nofollow }: MetaProps) {
   const { locale } = useRouter();
 
   const seo: NextSeoProps = {
@@ -24,6 +29,8 @@ function Meta() {
     twitter: {
       cardType: "summary_large_image",
     },
+    noindex,
+    nofollow,
   };
 
   const seoPl: NextSeoProps = {
