@@ -68,6 +68,31 @@ export interface IPageHome extends Entry<IPageHomeFields> {
   };
 }
 
+export interface IPageNotFoundFields {
+  /** Layout */
+  layout: ILayout;
+
+  /** Section - Not found */
+  sectionNotFound: ISectionNotFound;
+}
+
+export interface IPageNotFound extends Entry<IPageNotFoundFields> {
+  sys: {
+    id: string;
+    type: string;
+    createdAt: string;
+    updatedAt: string;
+    locale: string;
+    contentType: {
+      sys: {
+        id: "pageNotFound";
+        linkType: "ContentType";
+        type: "Link";
+      };
+    };
+  };
+}
+
 export interface IPageSecretLinkFields {
   /** Layout */
   layout: ILayout;
@@ -86,6 +111,31 @@ export interface IPageSecretLink extends Entry<IPageSecretLinkFields> {
     contentType: {
       sys: {
         id: "pageSecretLink";
+        linkType: "ContentType";
+        type: "Link";
+      };
+    };
+  };
+}
+
+export interface IPageThankYouFields {
+  /** Layout */
+  layout: ILayout;
+
+  /** Section - Thank you */
+  sectionThankYou: ISectionThankYou;
+}
+
+export interface IPageThankYou extends Entry<IPageThankYouFields> {
+  sys: {
+    id: string;
+    type: string;
+    createdAt: string;
+    updatedAt: string;
+    locale: string;
+    contentType: {
+      sys: {
+        id: "pageThankYou";
         linkType: "ContentType";
         type: "Link";
       };
@@ -204,6 +254,34 @@ export interface ISectionHero extends Entry<ISectionHeroFields> {
   };
 }
 
+export interface ISectionNotFoundFields {
+  /** Title */
+  title: string;
+
+  /** Paragraph */
+  paragraph: string;
+
+  /** Redirect link */
+  redirectLink: string;
+}
+
+export interface ISectionNotFound extends Entry<ISectionNotFoundFields> {
+  sys: {
+    id: string;
+    type: string;
+    createdAt: string;
+    updatedAt: string;
+    locale: string;
+    contentType: {
+      sys: {
+        id: "sectionNotFound";
+        linkType: "ContentType";
+        type: "Link";
+      };
+    };
+  };
+}
+
 export interface ISectionOurValuesFields {
   /** title */
   title: string;
@@ -291,15 +369,47 @@ export interface ISectionSecretLinkForm
   };
 }
 
+export interface ISectionThankYouFields {
+  /** Title */
+  title: string;
+
+  /** Paragraph */
+  paragraph: string;
+
+  /** Redirect link */
+  redirectLink: string;
+}
+
+export interface ISectionThankYou extends Entry<ISectionThankYouFields> {
+  sys: {
+    id: string;
+    type: string;
+    createdAt: string;
+    updatedAt: string;
+    locale: string;
+    contentType: {
+      sys: {
+        id: "sectionThankYou";
+        linkType: "ContentType";
+        type: "Link";
+      };
+    };
+  };
+}
+
 export type CONTENT_TYPE =
   | "layout"
   | "pageHome"
+  | "pageNotFound"
   | "pageSecretLink"
+  | "pageThankYou"
   | "secretLinks"
   | "sectionContact"
   | "sectionHero"
+  | "sectionNotFound"
   | "sectionOurValues"
-  | "sectionSecretLinkForm";
+  | "sectionSecretLinkForm"
+  | "sectionThankYou";
 
 export type LOCALE_CODE = "en-US" | "pl-PL";
 

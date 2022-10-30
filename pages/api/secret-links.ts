@@ -4,6 +4,7 @@ import jwt from "jsonwebtoken";
 import { ISecretLinks } from "../../types/generated/contentful";
 
 const KEY = process.env.JWT_KEY!;
+const GLOBAL_PASSWORD = process.env.SECRET_LINKS_PASSWORD;
 
 export type ResponseData = {
   token: string;
@@ -36,7 +37,11 @@ async function handler(req: NextApiRequest, res: NextApiResponse<ResponseData>) 
     let url = "";
 
     linkFields.forEach((item) => {
-      if (item.slug === slug && item.password === password && item.url) {
+      if (
+        item.slug === slug &&
+        (item.password === password || item.password === GLOBAL_PASSWORD) &&
+        item.url
+      ) {
         url = item.url;
       }
     });

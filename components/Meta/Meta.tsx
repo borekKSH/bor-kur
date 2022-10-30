@@ -17,10 +17,10 @@ function Meta({ noindex, nofollow }: MetaProps) {
   const { locale } = useRouter();
 
   const seo: NextSeoProps = {
-    canonical: "https://bor-kur.vercel.app/",
+    canonical: "https://bor-kur.pl/",
     languageAlternates: [
-      { hrefLang: Locales.en, href: `https://bor-kur.vercel.app/${Locales.en}` },
-      { hrefLang: Locales.pl, href: `https://bor-kur.vercel.app/` },
+      { hrefLang: Locales.en, href: `https://bor-kur.pl/${Locales.en}` },
+      { hrefLang: Locales.pl, href: `https://bor-kur.pl/` },
     ],
     openGraph: {
       type: "website",
@@ -40,7 +40,7 @@ function Meta({ noindex, nofollow }: MetaProps) {
       "Nasze zaangażowanie w chów i hodowlę zapewnia najlepsze warunki rozwoju, a dobrostan i zdrowie stad są dla nas priorytetem.",
     openGraph: {
       locale: Locales.pl,
-      url: `https://bor-kur.vercel.app/`,
+      url: `https://bor-kur.pl/`,
     },
   };
 
@@ -51,7 +51,7 @@ function Meta({ noindex, nofollow }: MetaProps) {
       "Our commitment to breeding and rearing ensures the best conditions for growth, and the welfare and health of the herds are our top priority.",
     openGraph: {
       locale: Locales.en,
-      url: `https://bor-kur.vercel.app/${Locales.en}`,
+      url: `https://bor-kur.pl/${Locales.en}`,
     },
   };
 
