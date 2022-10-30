@@ -14,6 +14,27 @@
   html {
     scroll-behavior: smooth;
   }
+
+  /* 2560px (1440p) */
+  @media screen and (min-width: 160em) {
+    html {
+      font-size: clamp(1em, 1em + 1vw, 1.5em);
+    }
+  }
+
+  /* 3200px ( (1440p + 4K) / 2 ) */
+  @media screen and (min-width: 200em) {
+    html {
+      font-size: clamp(1em, 1em + 1vw, 1.75em);
+    }
+  }
+
+  /* 3840px (4K) */
+  @media screen and (min-width: 240em) {
+    html {
+      font-size: clamp(1em, 1em + 1vw, 2em);
+    }
+  }
 }
 
 @layer utilities {

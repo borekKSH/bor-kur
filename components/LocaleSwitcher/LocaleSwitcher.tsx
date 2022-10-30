@@ -36,7 +36,7 @@ function LocaleSwitcher({ title, className }: LocaleSwitcherProps) {
       <CircleButton
         className={className}
         title={title}
-        icon={<IconWorld />}
+        icon={<IconWorld className="w-full h-auto" />}
         clickHandler={handleButtonClick}
       />
       <ul

@@ -1,6 +1,6 @@
 import React from "react";
 import Link from "next/link";
-import Image from "next/image";
+import Image from "next/future/image";
 import logo from "../../public/logo.svg";
 import { ILayout } from "../../types/generated/contentful";
 
@@ -15,7 +15,7 @@ function Logo({ content, clickHandler }: LogoProps) {
   return (
     <Link href="/#top" passHref>
       <a className="inline-flex gap-6 items-center" onClick={clickHandler}>
-        <Image src={logo} width={48} height={48} alt={logoAlternativeText} />
+        <Image className="w-10 h-auto" src={logo} alt={logoAlternativeText} />
         <h1
           className="
           text-xl font-bold text-neutral-900

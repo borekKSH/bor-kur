@@ -23,14 +23,14 @@ function ThemeSwitcher({ title, className }: ThemeSwitcherProps) {
   }, []);
 
   const getIconBasedOnTheme = () => {
-    if (!mounted) return <IconLoader className="animate-spin" />;
+    if (!mounted) return <IconLoader className="w-full h-auto animate-spin" />;
 
     const currentTheme = theme === Themes.SYSTEM ? systemTheme : theme;
 
     if (currentTheme === Themes.DARK) {
-      return <IconSun />;
+      return <IconSun className="w-full h-auto" />;
     }
-    return <IconMoon />;
+    return <IconMoon className="w-full h-auto" />;
   };
 
   const handleClick = () => {
