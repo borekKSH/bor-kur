@@ -1,4 +1,6 @@
 import React from "react";
+import { IconArrowUp } from "@tabler/icons";
+import ScrollToTop from "react-scroll-to-top";
 import Meta from "../Meta";
 import Navbar from "../Navbar";
 import ThemeSwitcher from "../ThemeSwitcher";
@@ -27,6 +29,15 @@ function Layout({ content, noindex = false, nofollow = false, children }: Layout
       >
         <main className="grid w-full">{children}</main>
         <Footer content={content} />
+        <ScrollToTop
+          className="
+          dark:!bg-neutral-900/90 dark:!text-white dark:hover:!text-yellow-400 hover:!text-yellow-400 !invisible !z-50
+            !right-6 !bottom-6 !p-2 !shadow-md !text-neutral-900 !w-11 !h-11
+              !bg-white/90 !backdrop-blur-md !rounded-full !transition-colors
+          md:!visible"
+          smooth
+          component={<IconArrowUp className="w-full h-auto" />}
+        />
         <div
           className="
           fixed bottom-6 right-6 grid gap-3 z-40

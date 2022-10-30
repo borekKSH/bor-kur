@@ -23,7 +23,7 @@ function Nav({ content, opened, clickHandler }: NavProps) {
       <ul
         className="
         flex flex-col gap-6
-        md:flex-row md:gap-3
+        md:flex-row md:gap-2
         lg:gap-6"
       >
         <NavLink title={about} destination="#about" clickHandler={clickHandler} />

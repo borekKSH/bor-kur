@@ -47,8 +47,8 @@ function OurValues({ content }: OurValuesProps) {
         </h2>
         <article
           className="
-          grid grid-cols-1 gap-10 place-items-center
-          lg:grid-cols-3 lg:gap-16"
+          grid grid-cols-1 gap-10 max-w-[20rem] place-items-center
+          lg:grid-cols-3 lg:gap-16 lg:max-w-none"
         >
           <OurValuesCard
             title={peopleTitle}
