@@ -9,7 +9,7 @@ type NavProps = {
 };
 
 function Nav({ content, opened, clickHandler }: NavProps) {
-  const { about, contact } = content.fields;
+  const { about, location, contact } = content.fields;
 
   return (
     <nav
@@ -27,6 +27,7 @@ function Nav({ content, opened, clickHandler }: NavProps) {
         lg:gap-8"
       >
         <NavLink title={about} destination="#about" clickHandler={clickHandler} />
+        <NavLink title={location} destination="/location" clickHandler={clickHandler} />
         <NavLink title={contact} destination="#contact" clickHandler={clickHandler} />
       </ul>
     </nav>

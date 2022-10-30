@@ -7,7 +7,7 @@ type FooterProps = {
 };
 
 function Footer({ content }: FooterProps) {
-  const { about, contact } = content.fields;
+  const { about, location, contact } = content.fields;
 
   return (
     <footer className="dark:bg-neutral-900 bg-yellow-100 z-20 w-full transition-colors">
@@ -35,8 +35,9 @@ function Footer({ content }: FooterProps) {
           flex flex-col gap-8 text-center
           md:flex-row"
         >
-          <NavLink title={about} destination="#about" clickHandler={() => {}} />
-          <NavLink title={contact} destination="#contact" clickHandler={() => {}} />
+          <NavLink title={about} destination="#about" />
+          <NavLink title={location} destination="/location" />
+          <NavLink title={contact} destination="#contact" />
         </ul>
       </nav>
     </footer>

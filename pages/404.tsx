@@ -12,7 +12,7 @@ type NotFoundProps = {
 };
 
 function NotFound({ content }: NotFoundProps) {
-  const { layout, sectionNotFound } = content.fields;
+  const { layout, notFound } = content.fields;
 
   const router = useRouter();
 
@@ -24,7 +24,7 @@ function NotFound({ content }: NotFoundProps) {
 
   return (
     <Layout content={layout} noindex nofollow>
-      <RedirectSection content={sectionNotFound} illustration={imageNotFound} />
+      <RedirectSection content={notFound} illustration={imageNotFound} />
     </Layout>
   );
 }

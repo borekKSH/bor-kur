@@ -5,7 +5,7 @@ import Link from "next/link";
 type NavLinkProps = {
   title: string;
   destination: string;
-  clickHandler: () => void;
+  clickHandler?: () => void;
 };
 
 function NavLink({ title, destination, clickHandler }: NavLinkProps) {
@@ -36,5 +36,9 @@ function NavLink({ title, destination, clickHandler }: NavLinkProps) {
     </li>
   );
 }
+
+NavLink.defaultProps = {
+  clickHandler: null,
+};
 
 export default NavLink;

@@ -10,6 +10,9 @@ export interface ILayoutFields {
   /** About */
   about: string;
 
+  /** Location */
+  location: string;
+
   /** Contact */
   contact: string;
 
@@ -68,12 +71,40 @@ export interface IPageHome extends Entry<IPageHomeFields> {
   };
 }
 
+export interface IPageLocationFields {
+  /** Layout */
+  layout: ILayout;
+
+  /** Map */
+  map: ISectionMap;
+
+  /** Our location */
+  ourLocation: ISectionOurLocation;
+}
+
+export interface IPageLocation extends Entry<IPageLocationFields> {
+  sys: {
+    id: string;
+    type: string;
+    createdAt: string;
+    updatedAt: string;
+    locale: string;
+    contentType: {
+      sys: {
+        id: "pageLocation";
+        linkType: "ContentType";
+        type: "Link";
+      };
+    };
+  };
+}
+
 export interface IPageNotFoundFields {
   /** Layout */
   layout: ILayout;
 
-  /** Section - Not found */
-  sectionNotFound: ISectionNotFound;
+  /** Not found */
+  notFound: ISectionNotFound;
 }
 
 export interface IPageNotFound extends Entry<IPageNotFoundFields> {
@@ -97,8 +128,8 @@ export interface IPageSecretLinkFields {
   /** Layout */
   layout: ILayout;
 
-  /** Section - Secret link form */
-  sectionSecretLinkForm: ISectionSecretLinkForm;
+  /** Secret link form */
+  secretLinkForm: ISectionSecretLinkForm;
 }
 
 export interface IPageSecretLink extends Entry<IPageSecretLinkFields> {
@@ -122,8 +153,8 @@ export interface IPageThankYouFields {
   /** Layout */
   layout: ILayout;
 
-  /** Section - Thank you */
-  sectionThankYou: ISectionThankYou;
+  /** Thank you */
+  thankYou: ISectionThankYou;
 }
 
 export interface IPageThankYou extends Entry<IPageThankYouFields> {
@@ -254,6 +285,34 @@ export interface ISectionHero extends Entry<ISectionHeroFields> {
   };
 }
 
+export interface ISectionMapFields {
+  /** Latitude */
+  latitude: number;
+
+  /** Longitude */
+  longitude: number;
+
+  /** Marker popup text */
+  markerPopupText: string;
+}
+
+export interface ISectionMap extends Entry<ISectionMapFields> {
+  sys: {
+    id: string;
+    type: string;
+    createdAt: string;
+    updatedAt: string;
+    locale: string;
+    contentType: {
+      sys: {
+        id: "sectionMap";
+        linkType: "ContentType";
+        type: "Link";
+      };
+    };
+  };
+}
+
 export interface ISectionNotFoundFields {
   /** Title */
   title: string;
@@ -275,6 +334,55 @@ export interface ISectionNotFound extends Entry<ISectionNotFoundFields> {
     contentType: {
       sys: {
         id: "sectionNotFound";
+        linkType: "ContentType";
+        type: "Link";
+      };
+    };
+  };
+}
+
+export interface ISectionOurLocationFields {
+  /** Title */
+  title: string;
+
+  /** Company name */
+  companyName: string;
+
+  /** City */
+  city: string;
+
+  /** Zip code */
+  zipCode: string;
+
+  /** Street */
+  street: string;
+
+  /** Street number */
+  streetNumber: string;
+
+  /** Country */
+  country: string;
+
+  /** NIP */
+  nip: string;
+
+  /** REGON */
+  regon: string;
+
+  /** Email */
+  email: string;
+}
+
+export interface ISectionOurLocation extends Entry<ISectionOurLocationFields> {
+  sys: {
+    id: string;
+    type: string;
+    createdAt: string;
+    updatedAt: string;
+    locale: string;
+    contentType: {
+      sys: {
+        id: "sectionOurLocation";
         linkType: "ContentType";
         type: "Link";
       };
@@ -400,13 +508,16 @@ export interface ISectionThankYou extends Entry<ISectionThankYouFields> {
 export type CONTENT_TYPE =
   | "layout"
   | "pageHome"
+  | "pageLocation"
   | "pageNotFound"
   | "pageSecretLink"
   | "pageThankYou"
   | "secretLinks"
   | "sectionContact"
   | "sectionHero"
+  | "sectionMap"
   | "sectionNotFound"
+  | "sectionOurLocation"
   | "sectionOurValues"
   | "sectionSecretLinkForm"
   | "sectionThankYou";
