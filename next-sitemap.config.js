@@ -13,5 +13,5 @@ module.exports = {
       { userAgent: '*', allow: '/' },
     ],
   },
-  exclude: ['/l/*/', '/en-US/l/*/', '/404', 'thank-you', '/en-US/404', '/en-US/thank-you'],
+  exclude: ['/l/*/', '/en-US/l/*/', '/404', '/en-US/404', '/thank-you', '/en-US/thank-you'],
 };
