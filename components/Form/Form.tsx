@@ -37,7 +37,11 @@ function Form({ content }: FormProps) {
       message: "",
     },
     validationSchema: yup.object({
-      email: yup.string().trim().required(ValidationErrors.REQUIRED).email(ValidationErrors.EMAIL),
+      email: yup
+        .string()
+        .trim()
+        .required(ValidationErrors.REQUIRED)
+        .email(ValidationErrors.EMAIL),
       message: yup.string().trim().required(ValidationErrors.REQUIRED),
     }),
     onSubmit: () => {},
@@ -49,7 +53,11 @@ function Form({ content }: FormProps) {
       action={formActionLink}
       method="POST"
       onSubmit={(event) => {
-        if (!formik.isValid || formik.values.email === "" || formik.values.message === "") {
+        if (
+          !formik.isValid ||
+          formik.values.email === "" ||
+          formik.values.message === ""
+        ) {
           event.preventDefault();
         }
       }}

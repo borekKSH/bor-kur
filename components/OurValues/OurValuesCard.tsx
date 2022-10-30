@@ -13,7 +13,13 @@ function OurValuesCard({ icon, image, alt, title, paragraph }: OurValuesCardProp
   return (
     <figure className="flex items-center flex-col gap-12">
       <div className="relative">
-        <Image style={{ borderRadius: "50%" }} src={image.src} alt={alt} width={320} height={320} />
+        <Image
+          style={{ borderRadius: "50%" }}
+          src={image.src}
+          alt={alt}
+          width={320}
+          height={320}
+        />
         <i className="rounded-full bg-white w-24 h-24 grid place-items-center absolute bottom-0 left-1/2 -translate-x-1/2 translate-y-1/4">
           <Image className="scale-[0.625]" src={icon} layout="fill" alt="" />
         </i>

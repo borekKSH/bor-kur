@@ -19,9 +19,15 @@ type LinkRedirectPageProps = {
 };
 
 function LinkRedirectPage({ content }: LinkRedirectPageProps) {
-  const { layout, sectionSecretLinkForm } = content.fields;
-  const { title, emptyFieldMessage, password, passwordPlaceholder, submit, wrongPasswordMessage } =
-    sectionSecretLinkForm.fields;
+  const { layout, secretLinkForm } = content.fields;
+  const {
+    title,
+    emptyFieldMessage,
+    password,
+    passwordPlaceholder,
+    submit,
+    wrongPasswordMessage,
+  } = secretLinkForm.fields;
 
   const router = useRouter();
   const { slug } = router.query;

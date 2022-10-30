@@ -12,11 +12,11 @@ type ThankYouPageProps = {
 };
 
 function ThankYouPage({ content }: ThankYouPageProps) {
-  const { layout, sectionThankYou } = content.fields;
+  const { layout, thankYou } = content.fields;
 
   return (
     <Layout content={layout} noindex nofollow>
-      <RedirectSection content={sectionThankYou} illustration={imageThankYou} />
+      <RedirectSection content={thankYou} illustration={imageThankYou} />
     </Layout>
   );
 }

@@ -5,10 +5,10 @@ import Link from "next/link";
 type NavLinkProps = {
   title: string;
   destination: string;
-  clickHandler: () => void;
+  clickHandler?: () => void;
 };
 
-function NavLink({ title, destination, clickHandler }: NavLinkProps) {
+function NavLink({ title, destination, clickHandler = () => {} }: NavLinkProps) {
   const linkClassNames = `
   text-2xl text-neutral-900 tracking-wide transition-colors
   hover:text-yellow-400 px-4 py-2 dark:text-white dark:hover:text-yellow-400
@@ -36,5 +36,9 @@ function NavLink({ title, destination, clickHandler }: NavLinkProps) {
     </li>
   );
 }
+
+NavLink.defaultProps = {
+  clickHandler: () => {},
+};
 
 export default NavLink;

@@ -48,7 +48,12 @@ function LocaleSwitcher({ title, className }: LocaleSwitcherProps) {
         md:left-auto md:translate-x-0 md:-bottom-3 md:right-0 md:translate-y-full md:origin-top-right`}
       >
         <li>
-          <Link href={{ pathname, query }} locale={Locales.ENGLISH} passHref scroll={false}>
+          <Link
+            href={{ pathname, query }}
+            locale={Locales.ENGLISH}
+            passHref
+            scroll={false}
+          >
             <a
               className="text-xl flex gap-4 justify-between w-full transition-colors text-neutral-900 hover:text-yellow-400 dark:text-white dark:hover:text-yellow-400"
               onClick={handleLinkClick}
@@ -64,7 +69,12 @@ function LocaleSwitcher({ title, className }: LocaleSwitcherProps) {
           </Link>
         </li>
         <li>
-          <Link href={{ pathname, query }} locale={Locales.POLISH} passHref scroll={false}>
+          <Link
+            href={{ pathname, query }}
+            locale={Locales.POLISH}
+            passHref
+            scroll={false}
+          >
             <a
               className="text-xl flex gap-4 justify-between w-full transition-colors text-neutral-900 hover:text-yellow-400 dark:text-white dark:hover:text-yellow-400"
               onClick={handleLinkClick}
