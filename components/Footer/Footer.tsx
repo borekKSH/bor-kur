@@ -10,14 +10,18 @@ function Footer({ content }: FooterProps) {
   const { about, location, contact } = content.fields;
 
   return (
-    <footer className="dark:bg-neutral-900 bg-yellow-100 z-20 w-full transition-colors">
+    <footer className="relative dark:bg-neutral-900 bg-yellow-100 z-20 w-full transition-colors">
       <nav
         className="
         max-w-container-padding mx-auto flex flex-col-reverse items-center gap-12 px-8 py-32
-        md:justify-between md:gap-4 md:py-12
-        lg:flex-row"
+        md:justify-between md:gap-4 md:py-12 md:flex-row"
       >
-        <p className="font-medium text-neutral-900 dark:text-neutral-400 transition-colors">
+        <p
+          className="
+          absolute text-center bottom-2 text-sm w-full
+            font-medium text-neutral-900 dark:text-neutral-400 transition-colors
+          md:text-base md:text-left md:static md:w-auto"
+        >
           Designed and coded by{" "}
           <a
             className="

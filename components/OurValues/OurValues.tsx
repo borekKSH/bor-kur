@@ -35,7 +35,7 @@ function OurValues({ content }: OurValuesProps) {
       id="about"
     >
       <div
-        className="py-28 max-w-container w-full px-8 grid gap-11 place-items-center mx-auto
+        className="py-24 max-w-container w-full px-8 grid gap-11 place-items-center mx-auto
         xl:gap-24"
       >
         <h2
