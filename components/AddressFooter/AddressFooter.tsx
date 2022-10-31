@@ -21,7 +21,7 @@ function AddressFooter({ content }: AddressFooterProps) {
         </h2>
         <address className="text-lg not-italic leading-relaxed text-center text-neutral-600 transition dark:text-neutral-200 grid gap-2 sm:text-xl md:text-left">
           <ul>
-            <li className="mb-2 text-2xl text-yellow-400 sm:text-3xl">
+            <li className="mb-2 text-2xl text-neutral-900 dark:text-yellow-400 sm:text-3xl">
               <strong>{companyName}</strong>
             </li>
             <li>
