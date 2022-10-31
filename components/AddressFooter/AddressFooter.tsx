@@ -28,7 +28,8 @@ function AddressFooter({ content }: AddressFooterProps) {
           className="
         text-4xl font-bold tracking-tight text-neutral-900 transition dark:text-white text-center
         sm:text-6xl
-        xl:text-7xl"
+        lg:text-7xl
+        xl:text-8xl"
         >
           {title}
         </h2>

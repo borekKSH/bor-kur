@@ -31,13 +31,15 @@ function Hero({ content }: HeroProps) {
         <div
           className="
           max-w-prose flex flex-col gap-6 items-center mx-auto
+          lg:gap-12
           xl:mx-0 xl:items-baseline"
         >
           <h2
             className="
             text-4xl font-bold tracking-tight text-neutral-900 transition dark:text-white text-center
             sm:text-6xl
-            xl:text-7xl xl:text-left"
+            lg:text-7xl
+            xl:text-8xl xl:text-left"
           >
             {firstTitleWord}
             <span className="text-yellow-900 dark:text-yellow-400 transition-colors">
