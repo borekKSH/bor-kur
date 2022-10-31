@@ -1,5 +1,6 @@
 {
   "name": "bor-kur.pl",
+  "license": "MIT",
   "version": "0.1.0",
   "private": true,
   "scripts": {
