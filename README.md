@@ -3,15 +3,15 @@
 Headless CMS-based website for the BOR-KUR chicken farm.
 
 ## Includes pages:
-- Home
+- **Home**
   - Hero
   - Our values
   - Contact us
-- Location
+- **Location**
   - Interactive map (Leaflet.js)
   - Our location
-- Thank you
-- Not found / 404 with auto-redirect
+- **Thank you**
+- **Not found / 404 with auto-redirect**
 
 In addition, it includes a simple link shortener with password-protected links.
 
