@@ -33,9 +33,9 @@ In addition, it includes a simple link shortener with password-protected links.
 
 First, you need to set enviromental variables in `.env` file to connect the Contentful CMS to the project.
 You can recreate Contentful data model based on auto-generated TypeScript file in `types/generated/contentful.d.ts`.
-- `SITE_URL` should contain url of your website
-- `JWT_KEY` should contain some random string
-- `SECRET_LINK_PASSWORD` is a global password which will work on every link as a backup and is not required.
+- `SITE_URL` should contain the url of your website.
+- `JWT_KEY` should contain some random string for creating JWT tokens.
+- `SECRET_LINK_PASSWORD` is a global password which will work on every link as a backup and **is not required**.
 
 ```bash
 npm run dev
