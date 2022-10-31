@@ -39,7 +39,8 @@ async function handler(req: NextApiRequest, res: NextApiResponse<ResponseData>) 
     linkFields.forEach((item) => {
       if (
         item.slug === slug &&
-        (item.password === password || item.password === GLOBAL_PASSWORD) &&
+        (password === item.password ||
+          (!!GLOBAL_PASSWORD && password === GLOBAL_PASSWORD)) &&
         item.url
       ) {
         url = item.url;
