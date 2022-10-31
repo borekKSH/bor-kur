@@ -2,7 +2,7 @@
 
 Headless CMS-based website for the BOR-KUR chicken farm.
 
-Includes pages:
+### Includes pages:
 - Home
   - Hero
   - Our values
