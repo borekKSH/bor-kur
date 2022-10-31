@@ -1,8 +1,8 @@
-## BOR-KUR.pl
+# BOR-KUR.pl
 
 Headless CMS-based website for the BOR-KUR chicken farm.
 
-### Includes pages:
+## Includes pages:
 - Home
   - Hero
   - Our values
@@ -15,7 +15,7 @@ Headless CMS-based website for the BOR-KUR chicken farm.
 
 In addition, it includes a simple link shortener with password-protected links.
 
-### Stack
+## Stack
 
 - Framework: [Next.js](https://nextjs.org)
 - Styling: [Tailwind CSS](https://tailwindcss.com)
@@ -29,7 +29,7 @@ In addition, it includes a simple link shortener with password-protected links.
 - Linting: [ESLint](https://eslint.org)
 - Code Formatting: [Prettier](https://prettier.io)
 
-### Development
+## Development
 
 First, you need to set enviromental variables in `.env` file to connect the Contentful CMS to the project.
 You can recreate Contentful data model based on auto-generated TypeScript file in `types/generated/contentful.d.ts`.
