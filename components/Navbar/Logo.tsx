@@ -14,15 +14,9 @@ function Logo({ content, clickHandler }: LogoProps) {
 
   return (
     <Link href="/#top" passHref>
-      <a className="inline-flex gap-6 items-center" onClick={clickHandler}>
+      <a className="inline-flex items-center gap-6" onClick={clickHandler}>
         <Image className="w-10 h-auto" src={logo} alt={logoAlternativeText} />
-        <h1
-          className="
-          text-xl font-bold text-neutral-900
-            dark:text-white transition-colors hover:text-yellow-400 dark:hover:text-yellow-400
-          md:text-2xl
-          lg:text-3xl"
-        >
+        <h1 className="text-xl font-bold text-neutral-900 dark:text-white transition-colors hover:text-yellow-400 dark:hover:text-yellow-400 md:text-2xl lg:text-3xl">
           BOR-KUR
         </h1>
       </a>

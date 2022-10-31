@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useTheme } from "next-themes";
 import { IconLoader, IconSun, IconMoon } from "@tabler/icons";
-import { CircleButton } from "../Buttons";
+import CircleButton from "../CircleButton";
 
 enum Themes {
   SYSTEM = "system",

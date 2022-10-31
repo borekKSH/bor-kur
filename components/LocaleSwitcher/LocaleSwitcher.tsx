@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import { useRouter } from "next/router";
 import Link from "next/link";
-import Image from "next/image";
+import Image from "next/future/image";
 import { IconWorld } from "@tabler/icons";
-import { CircleButton } from "../Buttons";
+import CircleButton from "../CircleButton";
 
 import flagPoland from "../../public/icons/flags/pl.svg";
 import flagUnitedStates from "../../public/icons/flags/us.svg";
@@ -55,15 +55,12 @@ function LocaleSwitcher({ title, className }: LocaleSwitcherProps) {
             scroll={false}
           >
             <a
-              className="text-xl flex gap-4 justify-between w-full transition-colors text-neutral-900 hover:text-yellow-400 dark:text-white dark:hover:text-yellow-400"
+              className="flex justify-between w-full text-xl gap-4 transition-colors text-neutral-900 hover:text-yellow-400 dark:text-white dark:hover:text-yellow-400"
               onClick={handleLinkClick}
             >
-              <Image
-                src={flagUnitedStates}
-                alt="Flag of the United States"
-                width={20}
-                height={20}
-              />
+              <i className="relative w-8 h-6">
+                <Image src={flagUnitedStates} alt="Flag of the United States" fill />
+              </i>
               English
             </a>
           </Link>
@@ -76,10 +73,12 @@ function LocaleSwitcher({ title, className }: LocaleSwitcherProps) {
             scroll={false}
           >
             <a
-              className="text-xl flex gap-4 justify-between w-full transition-colors text-neutral-900 hover:text-yellow-400 dark:text-white dark:hover:text-yellow-400"
+              className="flex items-center justify-between w-full text-xl gap-4 transition-colors text-neutral-900 hover:text-yellow-400 dark:text-white dark:hover:text-yellow-400"
               onClick={handleLinkClick}
             >
-              <Image src={flagPoland} alt="Flaga Polski" width={20} height={20} />
+              <i className="relative w-8 h-6">
+                <Image src={flagPoland} alt="Flaga Polski" fill />
+              </i>
               Polski
             </a>
           </Link>

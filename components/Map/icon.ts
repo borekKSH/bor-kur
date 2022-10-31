@@ -1,5 +1,3 @@
-/* eslint-disable import/no-unresolved */
-
 import L from "leaflet";
 import iconMapPin from "../../public/icons/map-pin.svg";
 

@@ -14,18 +14,11 @@ function Nav({ content, opened, clickHandler }: NavProps) {
   return (
     <nav
       className={`
-      ${opened ? "scale-x-100 opacity-100" : "scale-x-0 opacity-0"}
-        absolute grid place-items-center inset-0 h-screen transition origin-right
-         bg-white/90 shadow-md dark:bg-neutral-900/90 backdrop-blur-md px-8
-        md:rounded-full md:static md:h-auto md:scale-x-100 md:transform-none md:opacity-100 md:transition-none
+      ${opened ? "opacity-100 scale-x-100" : "opacity-0 scale-x-0"}
+      absolute inset-0 h-screen px-8 shadow-md grid place-items-center transition origin-right bg-white/90 dark:bg-neutral-900/90 backdrop-blur-md md:rounded-full md:static md:h-auto md:scale-x-100 md:transform-none md:opacity-100 md:transition-none
       `}
     >
-      <ul
-        className="
-        flex flex-col gap-6
-        md:flex-row md:gap-2
-        lg:gap-6"
-      >
+      <ul className="flex flex-col gap-6 md:flex-row md:gap-2 lg:gap-6">
         <NavLink title={about} destination="#about" clickHandler={clickHandler} />
         <NavLink title={location} destination="/location" clickHandler={clickHandler} />
         <NavLink title={contact} destination="#contact" clickHandler={clickHandler} />

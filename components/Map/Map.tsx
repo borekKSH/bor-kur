@@ -19,10 +19,7 @@ function Map({ content }: MapProps) {
 
   return (
     <MapContainer
-      className="
-      h-72 mt-24 fixed w-full
-      sm:h-96
-      md:h-[30rem]"
+      className="fixed w-full mt-24 h-72 sm:h-96 md:h-[30rem]"
       style={{ zIndex: 0 }}
       center={coordinates}
       zoom={9}

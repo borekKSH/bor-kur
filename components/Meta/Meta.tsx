@@ -1,6 +1,5 @@
 import React from "react";
 import { useRouter } from "next/router";
-import Head from "next/head";
 import { NextSeo, NextSeoProps } from "next-seo";
 
 enum Locales {
@@ -17,10 +16,9 @@ function Meta({ noindex, nofollow }: MetaProps) {
   const { locale } = useRouter();
 
   const seo: NextSeoProps = {
-    canonical: "https://bor-kur.pl/",
+    canonical: `https://bor-kur.pl/${Locales.pl}`,
     languageAlternates: [
       { hrefLang: Locales.en, href: `https://bor-kur.pl/${Locales.en}` },
-      { hrefLang: Locales.pl, href: `https://bor-kur.pl/` },
     ],
     openGraph: {
       type: "website",
@@ -29,6 +27,35 @@ function Meta({ noindex, nofollow }: MetaProps) {
     twitter: {
       cardType: "summary_large_image",
     },
+    additionalMetaTags: [
+      {
+        name: "author",
+        content: "Karol Binkowski",
+      },
+    ],
+    additionalLinkTags: [
+      {
+        rel: "apple-touch-icon",
+        sizes: "180x180",
+        href: "/apple-touch-icon.png",
+      },
+      {
+        rel: "icon",
+        type: "image/png",
+        sizes: "32x32",
+        href: "/favicon-32x32.png",
+      },
+      {
+        rel: "icon",
+        type: "image/png",
+        sizes: "16x16",
+        href: "/favicon-16x16.png",
+      },
+      {
+        rel: "manifest",
+        href: "/site.webmanifest",
+      },
+    ],
     noindex,
     nofollow,
   };
@@ -40,8 +67,14 @@ function Meta({ noindex, nofollow }: MetaProps) {
       "Nasze zaangażowanie w chów i hodowlę zapewnia najlepsze warunki rozwoju, a dobrostan i zdrowie stad są dla nas priorytetem.",
     openGraph: {
       locale: Locales.pl,
-      url: `https://bor-kur.pl/`,
+      url: `https://bor-kur.pl`,
     },
+    additionalMetaTags: [
+      {
+        name: "keywords",
+        content: "chów, hodowla, kury, kurczaki, drób, drob, mięso, farma, ferma",
+      },
+    ],
   };
 
   const seoEn: NextSeoProps = {
@@ -53,33 +86,15 @@ function Meta({ noindex, nofollow }: MetaProps) {
       locale: Locales.en,
       url: `https://bor-kur.pl/${Locales.en}`,
     },
+    additionalMetaTags: [
+      {
+        name: "keywords",
+        content: "farming, breeding, hens, chickens, poultry, poultry, meat, farm",
+      },
+    ],
   };
 
-  return (
-    <>
-      {locale === Locales.pl && <NextSeo {...seoPl} />}
-      {locale === Locales.en && <NextSeo {...seoEn} />}
-      <Head>
-        <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
-        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
-        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
-        <link rel="manifest" href="/site.webmanifest" />
-        {locale === Locales.pl && (
-          <meta
-            name="keywords"
-            content="chów, hodowla, kury, kurczaki, drób, drob, mięso, farma, ferma"
-          />
-        )}
-        {locale === Locales.en && (
-          <meta
-            name="keywords"
-            content="farming, breeding, hens, chickens, poultry, poultry, meat, farm"
-          />
-        )}
-        <meta name="author" content="Karol Binkowski" />
-      </Head>
-    </>
-  );
+  return locale === Locales.pl ? <NextSeo {...seoPl} /> : <NextSeo {...seoEn} />;
 }
 
 export default Meta;

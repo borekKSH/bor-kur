@@ -14,7 +14,7 @@ function HamburgerButton({ opened, setOpened }: HamburgerButtonProps) {
         direction="left"
         toggled={opened}
         toggle={setOpened}
-        label="Show navigation menu"
+        label="Menu"
         aria-expanded={opened}
       />
     </i>

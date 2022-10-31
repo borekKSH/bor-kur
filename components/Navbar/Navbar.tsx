@@ -20,18 +20,9 @@ function Navbar({ content }: NavbarProps) {
   };
 
   return (
-    <header
-      className="
-      fixed max-w-container w-full top-0 left-1/2 -translate-x-1/2 z-40 px-8 py-6
-        flex justify-between items-center dark:bg-gradient-to-b dark:from-neutral-900 to-transparent 
-      md:dark:bg-none"
-    >
+    <header className="fixed top-0 z-40 flex items-center justify-between w-full px-8 py-6 max-w-container left-1/2 -translate-x-1/2 dark:bg-gradient-to-b dark:from-neutral-900 to-transparent md:dark:bg-none">
       <Logo content={content} clickHandler={handleClick} />
-      <div
-        className="
-        md:flex md:gap-3
-        lg:gap-6"
-      >
+      <div className="md:flex md:gap-3 lg:gap-6">
         <Nav content={content} opened={opened} clickHandler={handleClick} />
         <ThemeSwitcher className="hidden md:grid" title={themeSwitcherTitle} />
         <LocaleSwitcher className="hidden md:grid" title={localeSwitcherTitle} />

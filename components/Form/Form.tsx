@@ -49,7 +49,7 @@ function Form({ content }: FormProps) {
 
   return (
     <form
-      className="max-w-prose w-full grid space-y-8 bg-yellow-100 dark:bg-neutral-600 transition-colors p-8"
+      className="w-full p-8 bg-yellow-100 max-w-prose grid space-y-8 dark:bg-neutral-600 transition-colors"
       action={formActionLink}
       method="POST"
       onSubmit={(event) => {

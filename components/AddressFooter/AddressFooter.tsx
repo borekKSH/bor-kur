@@ -11,66 +11,43 @@ function AddressFooter({ content }: AddressFooterProps) {
 
   return (
     <section
-      className="
-      mt-96 min-h-[24rem] w-full bg-yellow-200 z-20 dark:bg-neutral-800 transition px-8 py-32
-      sm:mt-[30rem]
-      md:mt-[36rem]
-      xl:py-12"
-      aria-label="address"
+      className="z-20 w-full px-8 py-32 bg-yellow-200 mt-96 min-h-[24rem] dark:bg-neutral-800 transition sm:mt-[30rem] md:mt-[36rem] xl:py-12"
+      aria-label={title}
       id="address"
     >
-      <div
-        className="
-        mx-auto max-w-container flex flex-col items-center justify-between h-full gap-12
-        lg:flex-row"
-      >
-        <h2
-          className="
-        text-4xl font-bold tracking-tight text-neutral-900 transition dark:text-white text-center
-        sm:text-6xl
-        lg:text-7xl
-        xl:text-8xl"
-        >
+      <div className="flex flex-col items-center justify-between h-full mx-auto max-w-container gap-12 lg:flex-row">
+        <h2 className="text-4xl font-bold tracking-tight text-center text-neutral-900 transition dark:text-white sm:text-6xl lg:text-7xl xl:text-8xl">
           {title}
         </h2>
-        <address
-          className="
-          not-italic text-neutral-600 transition dark:text-neutral-200 text-center text-lg leading-relaxed grid gap-2
-          sm:text-xl
-          md:text-left"
-        >
-          <div className="grid">
-            <strong className="text-yellow-400 text-2xl sm:text-3xl mb-2">
-              {companyName}
-            </strong>
-            <strong>
+        <address className="text-lg not-italic leading-relaxed text-center text-neutral-600 transition dark:text-neutral-200 grid gap-2 sm:text-xl md:text-left">
+          <ul>
+            <li className="mb-2 text-2xl text-yellow-400 sm:text-3xl">
+              <strong>{companyName}</strong>
+            </li>
+            <li>
               {city}, {zipCode}
-            </strong>
-            <strong>
+            </li>
+            <li>
               {street} {streetNumber}
-            </strong>
-          </div>
-          <div className="grid">
-            <span>
+            </li>
+            <li className="mt-2">
               <span className="font-bold">NIP: </span>
               {nip}
-            </span>
-            <span>
+            </li>
+            <li>
               <span className="font-bold">REGON: </span>
               {regon}
-            </span>
-          </div>
-          <div>
-            <span className="font-bold">E-mail: </span>
-            <a
-              className="
-              font-bold dark:text-neutral-200 text-neutral-800 transition-colors underline
-            hover:text-yellow-400 focus-visible:text-yellow-400 dark:hover:text-yellow-400 dark:focus-visible:text-yellow-400"
-              href={`mailto:${email}`}
-            >
-              {email}
-            </a>
-          </div>
+            </li>
+            <li className="mt-2">
+              <span className="font-bold">E-mail: </span>
+              <a
+                className="font-bold underline dark:text-neutral-200 text-neutral-800 transition-colors hover:text-yellow-400 focus-visible:text-yellow-400 dark:hover:text-yellow-400 dark:focus-visible:text-yellow-400"
+                href={`mailto:${email}`}
+              >
+                {email}
+              </a>
+            </li>
+          </ul>
         </address>
       </div>
     </section>

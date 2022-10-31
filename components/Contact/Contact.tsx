@@ -11,20 +11,11 @@ function Contact({ content }: ContactProps) {
 
   return (
     <section
-      className="min-h-screen w-full bg-yellow-50 z-20 dark:bg-neutral-800 transition-colors"
+      className="z-20 w-full min-h-screen bg-yellow-50 dark:bg-neutral-800 transition-colors"
       id="contact"
     >
-      <div
-        className="
-        max-w-container w-full py-24 px-8 grid gap-12 place-items-center mx-auto
-        xl:gap-24"
-      >
-        <h2
-          className="
-          text-4xl font-bold tracking-tight text-neutral-900 transition dark:text-white text-center
-          sm:text-6xl
-          xl:text-7xl"
-        >
+      <div className="w-full px-8 py-24 mx-auto max-w-container grid gap-12 place-items-center xl:gap-24">
+        <h2 className="text-4xl font-bold tracking-tight text-center text-neutral-900 dark:text-white transition-colors sm:text-6xl xl:text-7xl">
           {title}
         </h2>
         <Form content={content} />

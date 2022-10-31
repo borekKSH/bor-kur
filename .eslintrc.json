@@ -9,7 +9,7 @@
     "airbnb",
     "next/core-web-vitals",
     "plugin:prettier/recommended",
-    "plugin:tailwindcss/recommended"
+    "plugin:tailwind/recommended"
   ],
   "parser": "@typescript-eslint/parser",
   "parserOptions": {
@@ -23,7 +23,7 @@
     "react",
     "prettier",
     "@typescript-eslint",
-    "tailwindcss"
+    "tailwind"
   ],
   "rules": {
     "no-shadow": "off",

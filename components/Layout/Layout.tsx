@@ -23,26 +23,17 @@ function Layout({ content, noindex = false, nofollow = false, children }: Layout
       <Meta noindex={noindex} nofollow={nofollow} />
       <Navbar content={content} />
       <div
-        className="
-        grid min-h-screen font-sans-serif bg-yellow-50 dark:bg-neutral-800 transition-colors"
+        className="min-h-screen grid font-sans-serif bg-yellow-50 dark:bg-neutral-800 transition-colors"
         id="top"
       >
-        <main className="grid w-full">{children}</main>
+        <main className="w-full grid">{children}</main>
         <Footer content={content} />
         <ScrollToTop
-          className="
-          dark:!bg-neutral-900/90 dark:!text-white dark:hover:!text-yellow-400 hover:!text-yellow-400 !invisible !z-50
-            !right-6 !bottom-6 !p-2 !shadow-md !text-neutral-900 !w-11 !h-11
-              !bg-white/90 !backdrop-blur-md !rounded-full !transition-colors
-          md:!visible"
-          smooth
+          className="dark:!bg-neutral-900/90 dark:!text-white dark:hover:!text-yellow-400 hover:!text-yellow-400 !invisible !z-50 !right-6 !bottom-6 !p-2 !shadow-md !text-neutral-900 !w-11 !h-11 !bg-white/90 !backdrop-blur-md !rounded-full !transition-colors md:!visible"
           component={<IconArrowUp className="w-full h-auto" />}
+          smooth
         />
-        <div
-          className="
-          fixed bottom-6 right-6 grid gap-3 z-40
-          md:hidden"
-        >
+        <div className="fixed z-40 bottom-6 right-6 grid gap-3 md:hidden">
           <ThemeSwitcher title={themeSwitcherTitle} />
           <LocaleSwitcher title={localeSwitcherTitle} />
         </div>

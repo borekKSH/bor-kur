@@ -8,9 +8,7 @@ type LabelProps = {
 function Label({ htmlFor, children }: LabelProps) {
   return (
     <label
-      className="
-      mb-2 block text-lg font-bold tracking-wide dark:text-white text-neutral-900 transition-colors
-      md:text-xl"
+      className="block mb-2 text-lg font-bold tracking-wide dark:text-white text-neutral-900 transition-colors md:text-xl"
       htmlFor={htmlFor}
     >
       {children}

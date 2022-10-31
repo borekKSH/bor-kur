@@ -61,17 +61,10 @@ function LinkRedirectPage({ content }: LinkRedirectPageProps) {
 
   return (
     <Layout content={layout} noindex nofollow>
-      <div className="px-8 h-screen flex flex-col items-center justify-center gap-12">
-        <h2
-          className="
-          font-bold text-3xl
-          sm:text-4xl
-          xl:text-5xl"
-        >
-          {title}
-        </h2>
+      <div className="flex flex-col items-center justify-center h-screen px-8 gap-12">
+        <h2 className="text-3xl font-bold sm:text-4xl xl:text-5xl">{title}</h2>
         <form
-          className="max-w-prose w-full grid space-y-8 bg-yellow-100 dark:bg-neutral-600 transition-colors p-8"
+          className="w-full p-8 bg-yellow-100 max-w-prose grid space-y-8 dark:bg-neutral-600 transition-colors"
           onSubmit={formik.handleSubmit}
         >
           <div className="relative">

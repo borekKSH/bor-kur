@@ -30,26 +30,15 @@ function OurValues({ content }: OurValuesProps) {
 
   return (
     <section
-      className="mt-[calc(100vh-2rem)] min-h-screen w-full bg-yellow-100 z-20 dark:bg-neutral-900 transition"
+      className="z-20 w-full min-h-screen bg-yellow-100 mt-[calc(100vh-2rem)] dark:bg-neutral-900 transition"
       aria-label={title}
       id="about"
     >
-      <div
-        className="py-24 max-w-container w-full px-8 grid gap-11 place-items-center mx-auto
-        xl:gap-24"
-      >
-        <h2
-          className="text-4xl font-bold tracking-tight text-neutral-900 transition dark:text-white text-center
-            sm:text-6xl
-            xl:text-7xl"
-        >
+      <div className="w-full px-8 py-24 mx-auto max-w-container grid gap-11 place-items-center xl:gap-24">
+        <h2 className="text-4xl font-bold tracking-tight text-center text-neutral-900 transition dark:text-white sm:text-6xl xl:text-7xl">
           {title}
         </h2>
-        <article
-          className="
-          grid grid-cols-1 gap-10 max-w-[20rem] place-items-center
-          lg:grid-cols-3 lg:gap-16 lg:max-w-none"
-        >
+        <article className="grid grid-cols-1 gap-10 max-w-[20rem] place-items-center lg:grid-cols-3 lg:gap-16 lg:max-w-none">
           <OurValuesCard
             title={peopleTitle}
             paragraph={peopleParagraph}
