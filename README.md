@@ -23,6 +23,7 @@ In addition, it includes a simple link shortener with password-protected links.
 - Forms: [Formik](https://jaredpalmer.com/formik)
 - Form Validations: [Yup](https://github.com/jquense/yup)
 - SEO: [Next SEO](https://github.com/garmeeh/next-seo)
+- Sitemap: [Next Sitemap](https://www.npmjs.com/package/next-sitemap)
 - Icons: [Tabler Icons](https://tabler-icons.io)
 - Images: [Unsplash](https://unsplash.com/)
 - Illustrations: [unDraw](https://undraw.co)
