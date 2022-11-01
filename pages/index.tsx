@@ -4,20 +4,18 @@ import { IPageHome } from "../types/generated/contentful";
 import Layout from "../components/Layout";
 import Hero from "../components/Hero";
 import OurValues from "../components/OurValues";
-import Contact from "../components/Contact";
 
 type HomePageProps = {
   content: IPageHome;
 };
 
 function HomePage({ content }: HomePageProps) {
-  const { hero, layout, ourValues, contact } = content.fields;
+  const { hero, layout, ourValues } = content.fields;
 
   return (
     <Layout content={layout}>
       <Hero content={hero} />
       <OurValues content={ourValues} />
-      <Contact content={contact} />
     </Layout>
   );
 }

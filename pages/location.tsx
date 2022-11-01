@@ -2,7 +2,6 @@ import React from "react";
 import dynamic from "next/dynamic";
 import { createClient } from "contentful";
 import Layout from "../components/Layout";
-import AddressFooter from "../components/AddressFooter";
 import { IPageLocation } from "../types/generated/contentful";
 
 type LocationPageProps = {
@@ -14,12 +13,11 @@ const MapWithNoSSR = dynamic(() => import("../components/Map"), {
 });
 
 function LocationPage({ content }: LocationPageProps) {
-  const { layout, map, ourLocation } = content.fields;
+  const { layout, map } = content.fields;
 
   return (
     <Layout content={layout}>
       <MapWithNoSSR content={map} />
-      <AddressFooter content={ourLocation} />
     </Layout>
   );
 }

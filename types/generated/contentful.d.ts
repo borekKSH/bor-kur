@@ -7,20 +7,20 @@ export interface ILayoutFields {
   /** Logo alternative text */
   logoAlternativeText: string;
 
-  /** About */
-  about: string;
-
-  /** Location */
-  location: string;
-
-  /** Contact */
-  contact: string;
+  /** Navigation links */
+  navigationLinks: INavigationLink[];
 
   /** ThemeSwitcher title */
   themeSwitcherTitle: string;
 
   /** LocaleSwitcher title */
   localeSwitcherTitle: string;
+
+  /** Contact */
+  contact: ISectionContact;
+
+  /** Address */
+  address: ISectionOurLocation;
 }
 
 export interface ILayout extends Entry<ILayoutFields> {
@@ -33,6 +33,31 @@ export interface ILayout extends Entry<ILayoutFields> {
     contentType: {
       sys: {
         id: "layout";
+        linkType: "ContentType";
+        type: "Link";
+      };
+    };
+  };
+}
+
+export interface INavigationLinkFields {
+  /** Title */
+  title: string;
+
+  /** Destination */
+  destination: string;
+}
+
+export interface INavigationLink extends Entry<INavigationLinkFields> {
+  sys: {
+    id: string;
+    type: string;
+    createdAt: string;
+    updatedAt: string;
+    locale: string;
+    contentType: {
+      sys: {
+        id: "navigationLink";
         linkType: "ContentType";
         type: "Link";
       };
@@ -507,6 +532,7 @@ export interface ISectionThankYou extends Entry<ISectionThankYouFields> {
 
 export type CONTENT_TYPE =
   | "layout"
+  | "navigationLink"
   | "pageHome"
   | "pageLocation"
   | "pageNotFound"
