@@ -1,19 +1,17 @@
 import React from "react";
-
 import { createClient } from "contentful";
-import { IPageThankYou } from "../types/generated/contentful";
+import { ILayout, ISectionThankYou } from "../types/generated/contentful";
 import Layout from "../components/Layout";
 import RedirectSection from "../components/RedirectSection";
 
 import imageThankYou from "../public/illustrations/appreciation.svg";
 
 type ThankYouPageProps = {
-  content: IPageThankYou;
+  layout: ILayout;
+  thankYou: ISectionThankYou;
 };
 
-function ThankYouPage({ content }: ThankYouPageProps) {
-  const { layout, thankYou } = content.fields;
-
+function ThankYouPage({ layout, thankYou }: ThankYouPageProps) {
   return (
     <Layout content={layout} noindex nofollow>
       <RedirectSection content={thankYou} illustration={imageThankYou} />
@@ -24,15 +22,16 @@ function ThankYouPage({ content }: ThankYouPageProps) {
 async function getStaticProps({ locale }: { locale: string }) {
   const space = process.env.CONTENTFUL_SPACE_ID!;
   const accessToken = process.env.CONTENTFUL_ACCESS_TOKEN!;
-
   const client = createClient({ space, accessToken });
-
-  const entries = await client.getEntries({ content_type: "pageThankYou", locale });
-  const content = entries.items[0] as IPageThankYou;
 
   return {
     props: {
-      content,
+      layout: await client
+        .getEntries({ content_type: "layout", locale })
+        .then((res) => res.items[0]),
+      thankYou: await client
+        .getEntries({ content_type: "sectionThankYou", locale })
+        .then((res) => res.items[0]),
     },
   };
 }

@@ -1,19 +1,18 @@
 import React, { useEffect } from "react";
 import { useRouter } from "next/router";
 import { createClient } from "contentful";
-import { IPageNotFound } from "../types/generated/contentful";
+import { ILayout, IPageNotFound, ISectionNotFound } from "../types/generated/contentful";
 import Layout from "../components/Layout";
 import RedirectSection from "../components/RedirectSection";
 
 import imageNotFound from "../public/illustrations/page-not-found.svg";
 
 type NotFoundProps = {
-  content: IPageNotFound;
+  layout: ILayout;
+  notFound: ISectionNotFound;
 };
 
-function NotFound({ content }: NotFoundProps) {
-  const { layout, notFound } = content.fields;
-
+function NotFound({ layout, notFound }: NotFoundProps) {
   const router = useRouter();
 
   useEffect(() => {
@@ -32,15 +31,16 @@ function NotFound({ content }: NotFoundProps) {
 async function getStaticProps({ locale }: { locale: string }) {
   const space = process.env.CONTENTFUL_SPACE_ID!;
   const accessToken = process.env.CONTENTFUL_ACCESS_TOKEN!;
-
   const client = createClient({ space, accessToken });
-
-  const entries = await client.getEntries({ content_type: "pageNotFound", locale });
-  const content = entries.items[0] as IPageNotFound;
 
   return {
     props: {
-      content,
+      layout: await client
+        .getEntries({ content_type: "layout", locale })
+        .then((res) => res.items[0]),
+      notFound: await client
+        .getEntries({ content_type: "sectionNotFound", locale })
+        .then((res) => res.items[0]),
     },
   };
 }

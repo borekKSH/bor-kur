@@ -20,6 +20,10 @@ type FormProps = {
 function Form({ content }: FormProps) {
   const {
     formActionLink,
+    fullName,
+    fullNamePlaceholder,
+    phoneNumber,
+    phoneNumberPlaceholder,
     email,
     emailPlaceholder,
     message,
@@ -33,10 +37,14 @@ function Form({ content }: FormProps) {
 
   const formik = useFormik({
     initialValues: {
+      fullName: "",
+      phoneNumber: "",
       email: "",
       message: "",
     },
     validationSchema: yup.object({
+      fullName: yup.string().trim().required(ValidationErrors.REQUIRED),
+      phoneNumber: yup.string().trim(),
       email: yup
         .string()
         .trim()
@@ -55,6 +63,7 @@ function Form({ content }: FormProps) {
       onSubmit={(event) => {
         if (
           !formik.isValid ||
+          formik.values.fullName === "" ||
           formik.values.email === "" ||
           formik.values.message === ""
         ) {
@@ -63,22 +72,55 @@ function Form({ content }: FormProps) {
       }}
     >
       <div className="relative">
-        <Label htmlFor="email">{email}</Label>
+        <Label htmlFor="fullName">{fullName}</Label>
         <Input
-          value={formik.values.email}
+          value={formik.values.fullName}
           changeHandler={formik.handleChange}
           blurHandler={formik.handleBlur}
-          id="email"
-          name="email"
-          type="email"
-          placeholder={emailPlaceholder}
-          error={formik.touched.email! && !!formik.errors.email}
+          id="fullName"
+          name="fullName"
+          type="text"
+          placeholder={fullNamePlaceholder}
+          error={formik.touched.fullName! && !!formik.errors.fullName}
         />
         <ErrorLabel>
-          {formik.touched.email &&
-            ((formik.errors.email === ValidationErrors.EMAIL && invalidEmailMessage) ||
-              (formik.errors.email === ValidationErrors.REQUIRED && emptyFieldMessage))}
+          {formik.touched.fullName &&
+            formik.errors.email === ValidationErrors.REQUIRED &&
+            emptyFieldMessage}
         </ErrorLabel>
+      </div>
+      <div className="grid sm:grid-cols-2 sm:gap-4">
+        <div className="relative">
+          <Label htmlFor="email">{email}</Label>
+          <Input
+            value={formik.values.email}
+            changeHandler={formik.handleChange}
+            blurHandler={formik.handleBlur}
+            id="email"
+            name="email"
+            type="email"
+            placeholder={emailPlaceholder}
+            error={formik.touched.email! && !!formik.errors.email}
+          />
+          <ErrorLabel>
+            {formik.touched.email &&
+              ((formik.errors.email === ValidationErrors.EMAIL && invalidEmailMessage) ||
+                (formik.errors.email === ValidationErrors.REQUIRED && emptyFieldMessage))}
+          </ErrorLabel>
+        </div>
+        <div className="relative">
+          <Label htmlFor="phoneNumber">{phoneNumber}</Label>
+          <Input
+            value={formik.values.phoneNumber}
+            changeHandler={formik.handleChange}
+            blurHandler={formik.handleBlur}
+            id="phoneNumber"
+            name="phoneNumber"
+            type="text"
+            placeholder={phoneNumberPlaceholder}
+            error={false}
+          />
+        </div>
       </div>
       <div className="relative">
         <Label htmlFor="message">{message}</Label>

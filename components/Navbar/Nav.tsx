@@ -19,12 +19,12 @@ function Nav({ content, opened, clickHandler }: NavProps) {
       `}
     >
       <ul className="flex flex-col gap-6 md:flex-row md:gap-2 lg:gap-6">
-        {navigationLinks.map(({ fields }) => (
+        {navigationLinks.map((link) => (
           <NavLink
-            title={fields.title}
-            destination={fields.destination}
+            key={link.fields.title}
+            title={link.fields.title}
+            destination={link.fields.destination}
             clickHandler={clickHandler}
-            key={fields.title}
           />
         ))}
       </ul>

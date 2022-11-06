@@ -16,11 +16,11 @@ export interface ILayoutFields {
   /** LocaleSwitcher title */
   localeSwitcherTitle: string;
 
-  /** Contact */
-  contact: ISectionContact;
-
   /** Address */
   address: ISectionOurLocation;
+
+  /** Contact */
+  contact: ISectionContact;
 }
 
 export interface ILayout extends Entry<ILayoutFields> {
@@ -74,9 +74,6 @@ export interface IPageHomeFields {
 
   /** Our Values */
   ourValues: ISectionOurValues;
-
-  /** Contact */
-  contact: ISectionContact;
 }
 
 export interface IPageHome extends Entry<IPageHomeFields> {
@@ -102,9 +99,6 @@ export interface IPageLocationFields {
 
   /** Map */
   map: ISectionMap;
-
-  /** Our location */
-  ourLocation: ISectionOurLocation;
 }
 
 export interface IPageLocation extends Entry<IPageLocationFields> {
@@ -227,9 +221,52 @@ export interface ISecretLinks extends Entry<ISecretLinksFields> {
   };
 }
 
+export interface ISectionAboutFields {
+  /** Title */
+  title: string;
+
+  /** Paragraph */
+  paragraph: string;
+
+  /** Cta */
+  cta: string;
+
+  /** Image alternative text */
+  imageAlternativeText: string;
+}
+
+export interface ISectionAbout extends Entry<ISectionAboutFields> {
+  sys: {
+    id: string;
+    type: string;
+    createdAt: string;
+    updatedAt: string;
+    locale: string;
+    contentType: {
+      sys: {
+        id: "sectionAbout";
+        linkType: "ContentType";
+        type: "Link";
+      };
+    };
+  };
+}
+
 export interface ISectionContactFields {
   /** Title */
   title: string;
+
+  /** Full name */
+  fullName: string;
+
+  /** Full name placeholder */
+  fullNamePlaceholder: string;
+
+  /** Phone number */
+  phoneNumber: string;
+
+  /** Phone number placeholder */
+  phoneNumberPlaceholder: string;
 
   /** Email */
   email: string;
@@ -311,6 +348,9 @@ export interface ISectionHero extends Entry<ISectionHeroFields> {
 }
 
 export interface ISectionMapFields {
+  /** Title */
+  title: string;
+
   /** Latitude */
   latitude: number;
 
@@ -539,6 +579,7 @@ export type CONTENT_TYPE =
   | "pageSecretLink"
   | "pageThankYou"
   | "secretLinks"
+  | "sectionAbout"
   | "sectionContact"
   | "sectionHero"
   | "sectionMap"
