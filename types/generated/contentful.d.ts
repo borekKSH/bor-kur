@@ -262,17 +262,17 @@ export interface ISectionContactFields {
   /** Full name placeholder */
   fullNamePlaceholder: string;
 
-  /** Phone number */
-  phoneNumber: string;
-
-  /** Phone number placeholder */
-  phoneNumberPlaceholder: string;
-
   /** Email */
   email: string;
 
   /** Email placeholder */
   emailPlaceholder: string;
+
+  /** Phone number */
+  phoneNumber: string;
+
+  /** Phone number placeholder */
+  phoneNumberPlaceholder: string;
 
   /** Message */
   message: string;
@@ -288,6 +288,9 @@ export interface ISectionContactFields {
 
   /** Invalid email message */
   invalidEmailMessage: string;
+
+  /** Invalid phone number message */
+  invalidPhoneNumberMessage: string;
 
   /** Form action link */
   formActionLink: string;

@@ -27,7 +27,7 @@ function Map({ content }: MapProps) {
           {title}
         </h2>
         <MapContainer
-          className="w-full max-w-xs rounded h-80 md:max-w-96 md:h-96 lg:max-w-[30rem] lg:h-[30rem] xl:max-w-[35rem] xl:h-[35rem]"
+          className="w-full rounded max-w-[100vw-4rem] h-80 md:h-96 lg:h-[30rem] xl:h-[35rem]"
           style={{ zIndex: 0 }}
           center={coordinates}
           zoom={6}
