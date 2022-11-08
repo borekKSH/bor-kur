@@ -4,7 +4,6 @@ import {
   ISectionHero,
   ILayout,
   ISectionOurValues,
-  ISectionHeroFields,
   ISectionAbout,
 } from "../types/generated/contentful";
 import Layout from "../components/Layout";

@@ -7,15 +7,13 @@ import imageAbout from "../../public/images/about.jpg";
 type AboutProps = { content: ISectionAbout };
 
 function About({ content }: AboutProps) {
-  const { title, paragraph, cta, imageAlternativeText } = content.fields;
+  const { title, paragraph, imageAlternativeText } = content.fields;
 
   return (
     <ImageCtaSection
       id="about"
       title={title}
       paragraph={paragraph}
-      cta={cta}
-      destination="/about"
       image={imageAbout}
       alt={imageAlternativeText}
     />
