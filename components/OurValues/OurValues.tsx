@@ -30,9 +30,9 @@ function OurValues({ content }: OurValuesProps) {
 
   return (
     <section
-      className="z-20 w-full min-h-screen bg-yellow-100 mt-[calc(100vh-2rem)] dark:bg-neutral-900 transition"
+      className="z-20 w-full min-h-screen bg-yellow-100 dark:bg-neutral-800 transition"
       aria-label={title}
-      id="about"
+      id="values"
     >
       <div className="w-full px-8 py-24 mx-auto max-w-container grid gap-11 place-items-center xl:gap-24">
         <h2 className="text-4xl font-bold tracking-tight text-center text-neutral-900 transition dark:text-white sm:text-6xl xl:text-7xl">

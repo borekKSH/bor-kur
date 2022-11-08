@@ -11,7 +11,7 @@ function AddressFooter({ content }: AddressFooterProps) {
 
   return (
     <section
-      className="z-20 w-full px-8 py-32 bg-yellow-200 mt-96 min-h-[24rem] dark:bg-neutral-800 transition sm:mt-[30rem] md:mt-[36rem] xl:py-12"
+      className="z-20 w-full px-8 py-32 bg-yellow-100 min-h-[24rem] dark:bg-neutral-800 transition xl:py-12"
       aria-label={title}
       id="address"
     >

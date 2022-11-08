@@ -14,10 +14,11 @@
   },
   "dependencies": {
     "@tabler/icons": "^1.106.0",
-    "contentful": "^9.2.5",
+    "contentful": "^9.2.9",
     "contentful-management": "^10.18.2",
     "contentful-typescript-codegen": "^3.2.3",
     "formik": "^2.2.9",
+    "google-map-react": "^2.2.0",
     "hamburger-react": "^2.5.0",
     "jsonwebtoken": "^8.5.1",
     "leaflet": "^1.9.2",
@@ -32,6 +33,7 @@
   },
   "devDependencies": {
     "@next/env": "*",
+    "@types/google-map-react": "^2.1.7",
     "@types/jsonwebtoken": "^8.5.9",
     "@types/leaflet": "^1.9.0",
     "@types/node": "18.11.3",

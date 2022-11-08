@@ -7,10 +7,10 @@ type FooterProps = {
 };
 
 function Footer({ content }: FooterProps) {
-  const { about, location, contact } = content.fields;
+  const { navigationLinks } = content.fields;
 
   return (
-    <footer className="relative z-20 w-full bg-yellow-100 dark:bg-neutral-900 transition-colors">
+    <footer className="relative z-20 w-full bg-yellow-200 dark:bg-neutral-900 transition-colors">
       <nav className="flex flex-col-reverse items-center px-8 py-32 mx-auto max-w-container-padding gap-12 md:justify-between md:gap-4 md:py-12 md:flex-row">
         <p className="absolute w-full text-sm font-medium text-center bottom-2 text-neutral-900 dark:text-neutral-400 transition-colors md:text-base md:text-left md:static md:w-auto">
           Designed and coded by{" "}
@@ -24,9 +24,13 @@ function Footer({ content }: FooterProps) {
           </a>
         </p>
         <ul className="flex flex-col text-center gap-6 md:flex-row">
-          <NavLink title={about} destination="#about" />
-          <NavLink title={location} destination="/location" />
-          <NavLink title={contact} destination="#contact" />
+          {navigationLinks.map(({ fields }) => (
+            <NavLink
+              title={fields.title}
+              destination={fields.destination}
+              key={fields.title}
+            />
+          ))}
         </ul>
       </nav>
     </footer>

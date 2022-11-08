@@ -7,20 +7,20 @@ export interface ILayoutFields {
   /** Logo alternative text */
   logoAlternativeText: string;
 
-  /** About */
-  about: string;
-
-  /** Location */
-  location: string;
-
-  /** Contact */
-  contact: string;
+  /** Navigation links */
+  navigationLinks: INavigationLink[];
 
   /** ThemeSwitcher title */
   themeSwitcherTitle: string;
 
   /** LocaleSwitcher title */
   localeSwitcherTitle: string;
+
+  /** Address */
+  address: ISectionOurLocation;
+
+  /** Contact */
+  contact: ISectionContact;
 }
 
 export interface ILayout extends Entry<ILayoutFields> {
@@ -40,6 +40,31 @@ export interface ILayout extends Entry<ILayoutFields> {
   };
 }
 
+export interface INavigationLinkFields {
+  /** Title */
+  title: string;
+
+  /** Destination */
+  destination: string;
+}
+
+export interface INavigationLink extends Entry<INavigationLinkFields> {
+  sys: {
+    id: string;
+    type: string;
+    createdAt: string;
+    updatedAt: string;
+    locale: string;
+    contentType: {
+      sys: {
+        id: "navigationLink";
+        linkType: "ContentType";
+        type: "Link";
+      };
+    };
+  };
+}
+
 export interface IPageHomeFields {
   /** Layout */
   layout: ILayout;
@@ -49,9 +74,6 @@ export interface IPageHomeFields {
 
   /** Our Values */
   ourValues: ISectionOurValues;
-
-  /** Contact */
-  contact: ISectionContact;
 }
 
 export interface IPageHome extends Entry<IPageHomeFields> {
@@ -77,9 +99,6 @@ export interface IPageLocationFields {
 
   /** Map */
   map: ISectionMap;
-
-  /** Our location */
-  ourLocation: ISectionOurLocation;
 }
 
 export interface IPageLocation extends Entry<IPageLocationFields> {
@@ -202,15 +221,58 @@ export interface ISecretLinks extends Entry<ISecretLinksFields> {
   };
 }
 
+export interface ISectionAboutFields {
+  /** Title */
+  title: string;
+
+  /** Paragraph */
+  paragraph: string;
+
+  /** Cta */
+  cta: string;
+
+  /** Image alternative text */
+  imageAlternativeText: string;
+}
+
+export interface ISectionAbout extends Entry<ISectionAboutFields> {
+  sys: {
+    id: string;
+    type: string;
+    createdAt: string;
+    updatedAt: string;
+    locale: string;
+    contentType: {
+      sys: {
+        id: "sectionAbout";
+        linkType: "ContentType";
+        type: "Link";
+      };
+    };
+  };
+}
+
 export interface ISectionContactFields {
   /** Title */
   title: string;
+
+  /** Full name */
+  fullName: string;
+
+  /** Full name placeholder */
+  fullNamePlaceholder: string;
 
   /** Email */
   email: string;
 
   /** Email placeholder */
   emailPlaceholder: string;
+
+  /** Phone number */
+  phoneNumber: string;
+
+  /** Phone number placeholder */
+  phoneNumberPlaceholder: string;
 
   /** Message */
   message: string;
@@ -226,6 +288,9 @@ export interface ISectionContactFields {
 
   /** Invalid email message */
   invalidEmailMessage: string;
+
+  /** Invalid phone number message */
+  invalidPhoneNumberMessage: string;
 
   /** Form action link */
   formActionLink: string;
@@ -286,6 +351,9 @@ export interface ISectionHero extends Entry<ISectionHeroFields> {
 }
 
 export interface ISectionMapFields {
+  /** Title */
+  title: string;
+
   /** Latitude */
   latitude: number;
 
@@ -507,12 +575,14 @@ export interface ISectionThankYou extends Entry<ISectionThankYouFields> {
 
 export type CONTENT_TYPE =
   | "layout"
+  | "navigationLink"
   | "pageHome"
   | "pageLocation"
   | "pageNotFound"
   | "pageSecretLink"
   | "pageThankYou"
   | "secretLinks"
+  | "sectionAbout"
   | "sectionContact"
   | "sectionHero"
   | "sectionMap"

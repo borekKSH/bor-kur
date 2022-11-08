@@ -1,23 +1,30 @@
 import React from "react";
-import { createClient } from "contentful";
-import { IPageHome } from "../types/generated/contentful";
+import { createClient, EntryCollection } from "contentful";
+import {
+  ISectionHero,
+  ILayout,
+  ISectionOurValues,
+  ISectionHeroFields,
+  ISectionAbout,
+} from "../types/generated/contentful";
 import Layout from "../components/Layout";
 import Hero from "../components/Hero";
 import OurValues from "../components/OurValues";
-import Contact from "../components/Contact";
+import About from "../components/About";
 
 type HomePageProps = {
-  content: IPageHome;
+  hero: ISectionHero;
+  about: ISectionAbout;
+  layout: ILayout;
+  ourValues: ISectionOurValues;
 };
 
-function HomePage({ content }: HomePageProps) {
-  const { hero, layout, ourValues, contact } = content.fields;
-
+function HomePage({ hero, about, layout, ourValues }: HomePageProps) {
   return (
     <Layout content={layout}>
       <Hero content={hero} />
+      <About content={about} />
       <OurValues content={ourValues} />
-      <Contact content={contact} />
     </Layout>
   );
 }
@@ -25,15 +32,22 @@ function HomePage({ content }: HomePageProps) {
 async function getStaticProps({ locale }: { locale: string }) {
   const space = process.env.CONTENTFUL_SPACE_ID!;
   const accessToken = process.env.CONTENTFUL_ACCESS_TOKEN!;
-
   const client = createClient({ space, accessToken });
-
-  const entries = await client.getEntries({ content_type: "pageHome", locale });
-  const content = entries.items[0] as IPageHome;
 
   return {
     props: {
-      content,
+      hero: await client
+        .getEntries({ content_type: "sectionHero", locale })
+        .then((res) => res.items[0]),
+      about: await client
+        .getEntries({ content_type: "sectionAbout", locale })
+        .then((res) => res.items[0]),
+      layout: await client
+        .getEntries({ content_type: "layout", locale })
+        .then((res) => res.items[0]),
+      ourValues: await client
+        .getEntries({ content_type: "sectionOurValues", locale })
+        .then((res) => res.items[0]),
     },
   };
 }

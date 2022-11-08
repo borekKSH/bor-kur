@@ -14,24 +14,35 @@ const attribution =
   '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors';
 
 function Map({ content }: MapProps) {
-  const { latitude, longitude, markerPopupText } = content.fields;
+  const { title, latitude, longitude, markerPopupText } = content.fields;
   const coordinates: LatLngTuple = [latitude, longitude];
 
   return (
-    <MapContainer
-      className="fixed w-full mt-24 h-72 sm:h-96 md:h-[30rem]"
-      style={{ zIndex: 0 }}
-      center={coordinates}
-      zoom={9}
+    <section
+      className="z-20 w-full min-h-screen bg-yellow-50 dark:bg-neutral-800 transition-colors"
+      id="contact"
     >
-      <TileLayer
-        url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-        attribution={attribution}
-      />
-      <Marker icon={markerIcon} position={coordinates}>
-        <Popup>{markerPopupText}</Popup>
-      </Marker>
-    </MapContainer>
+      <div className="w-full px-8 py-24 mx-auto max-w-container grid gap-12 place-items-center xl:gap-24">
+        <h2 className="text-4xl font-bold tracking-tight text-center text-neutral-900 dark:text-white transition-colors sm:text-6xl xl:text-7xl">
+          {title}
+        </h2>
+        <MapContainer
+          className="w-full rounded max-w-[100vw-4rem] h-80 md:h-96 lg:h-[30rem] xl:h-[35rem]"
+          style={{ zIndex: 0 }}
+          center={coordinates}
+          zoom={6}
+          scrollWheelZoom={false}
+        >
+          <TileLayer
+            url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+            attribution={attribution}
+          />
+          <Marker icon={markerIcon} position={coordinates}>
+            <Popup>{markerPopupText}</Popup>
+          </Marker>
+        </MapContainer>
+      </div>
+    </section>
   );
 }
 

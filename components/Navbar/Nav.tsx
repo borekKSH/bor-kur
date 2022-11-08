@@ -9,7 +9,7 @@ type NavProps = {
 };
 
 function Nav({ content, opened, clickHandler }: NavProps) {
-  const { about, location, contact } = content.fields;
+  const { navigationLinks } = content.fields;
 
   return (
     <nav
@@ -19,9 +19,14 @@ function Nav({ content, opened, clickHandler }: NavProps) {
       `}
     >
       <ul className="flex flex-col gap-6 md:flex-row md:gap-2 lg:gap-6">
-        <NavLink title={about} destination="#about" clickHandler={clickHandler} />
-        <NavLink title={location} destination="/location" clickHandler={clickHandler} />
-        <NavLink title={contact} destination="#contact" clickHandler={clickHandler} />
+        {navigationLinks.map((link) => (
+          <NavLink
+            key={link.fields.title}
+            title={link.fields.title}
+            destination={link.fields.destination}
+            clickHandler={clickHandler}
+          />
+        ))}
       </ul>
     </nav>
   );
