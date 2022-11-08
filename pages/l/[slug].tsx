@@ -4,7 +4,7 @@ import { useRouter } from "next/router";
 import { useFormik } from "formik";
 import * as yup from "yup";
 import jwt from "jsonwebtoken";
-import { IPageSecretLink } from "../../types/generated/contentful";
+import { ILayout, ISectionSecretLinkForm } from "../../types/generated/contentful";
 import Layout from "../../components/Layout";
 import { Input, ErrorLabel, Label, Submit } from "../../components/Form";
 import { RequestBody, ResponseData } from "../api/secret-links";
@@ -15,11 +15,11 @@ enum ValidationErrors {
 }
 
 type LinkRedirectPageProps = {
-  content: IPageSecretLink;
+  layout: ILayout;
+  secretLinkForm: ISectionSecretLinkForm;
 };
 
-function LinkRedirectPage({ content }: LinkRedirectPageProps) {
-  const { layout, secretLinkForm } = content.fields;
+function LinkRedirectPage({ layout, secretLinkForm }: LinkRedirectPageProps) {
   const {
     title,
     emptyFieldMessage,
@@ -103,12 +103,14 @@ async function getServerSideProps({ locale }: { locale: string }) {
 
   const client = createClient({ space, accessToken });
 
-  const entries = await client.getEntries({ content_type: "pageSecretLink", locale });
-  const content = entries.items[0] as IPageSecretLink;
-
   return {
     props: {
-      content,
+      layout: await client
+        .getEntries({ content_type: "layout", locale })
+        .then((res) => res.items[0]),
+      secretLinkForm: await client
+        .getEntries({ content_type: "sectionSecretLinkForm", locale })
+        .then((res) => res.items[0]),
     },
   };
 }
