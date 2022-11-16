@@ -1,21 +1,22 @@
-import React from "react";
-import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
-import { LatLngTuple } from "leaflet";
+import React, { useMemo } from "react";
+import { GoogleMap, useLoadScript, MarkerF } from "@react-google-maps/api";
 import { ISectionMap } from "../../types/generated/contentful";
-import markerIcon from "./icon";
-
-import "leaflet/dist/leaflet.css";
 
 type MapProps = {
   content: ISectionMap;
 };
 
-const attribution =
-  '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors';
-
 function Map({ content }: MapProps) {
-  const { title, latitude, longitude, markerPopupText } = content.fields;
-  const coordinates: LatLngTuple = [latitude, longitude];
+  const { title, latitude, longitude } = content.fields;
+
+  const { isLoaded } = useLoadScript({
+    googleMapsApiKey: process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY!,
+  });
+
+  const center = useMemo(
+    () => ({ lat: latitude, lng: longitude }),
+    [latitude, longitude]
+  );
 
   return (
     <section
@@ -26,21 +27,18 @@ function Map({ content }: MapProps) {
         <h2 className="text-4xl font-bold tracking-tight text-center text-neutral-900 dark:text-white transition-colors sm:text-6xl xl:text-7xl">
           {title}
         </h2>
-        <MapContainer
-          className="w-full rounded max-w-[100vw-4rem] h-80 md:h-96 lg:h-[30rem] xl:h-[35rem]"
-          style={{ zIndex: 0 }}
-          center={coordinates}
-          zoom={6}
-          scrollWheelZoom={false}
-        >
-          <TileLayer
-            url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-            attribution={attribution}
-          />
-          <Marker icon={markerIcon} position={coordinates}>
-            <Popup>{markerPopupText}</Popup>
-          </Marker>
-        </MapContainer>
+        {!isLoaded && (
+          <div className="w-full rounded dark:bg-neutral-900 animate-pulse max-w-[100vw-4rem] h-80 md:h-96 lg:h-[30rem] xl:h-[35rem]" />
+        )}
+        {!!isLoaded && (
+          <GoogleMap
+            zoom={14}
+            center={center}
+            mapContainerClassName="w-full rounded max-w-[100vw-4rem] h-80 md:h-96 lg:h-[30rem] xl:h-[35rem]"
+          >
+            <MarkerF position={center} />
+          </GoogleMap>
+        )}
       </div>
     </section>
   );

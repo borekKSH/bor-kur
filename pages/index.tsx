@@ -1,5 +1,5 @@
 import React from "react";
-import { createClient, EntryCollection } from "contentful";
+import { createClient } from "contentful";
 import {
   ISectionHero,
   ILayout,

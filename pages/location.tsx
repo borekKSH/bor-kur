@@ -1,7 +1,7 @@
 import React from "react";
-import dynamic from "next/dynamic";
 import { createClient } from "contentful";
 import Layout from "../components/Layout";
+import Map from "../components/Map";
 import { ILayout, ISectionMap } from "../types/generated/contentful";
 
 type LocationPageProps = {
@@ -9,14 +9,10 @@ type LocationPageProps = {
   map: ISectionMap;
 };
 
-const MapWithNoSSR = dynamic(() => import("../components/Map"), {
-  ssr: false,
-});
-
 function LocationPage({ layout, map }: LocationPageProps) {
   return (
     <Layout content={layout}>
-      <MapWithNoSSR content={map} />
+      <Map content={map} />
     </Layout>
   );
 }

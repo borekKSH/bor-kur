@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import { useRouter } from "next/router";
 import { createClient } from "contentful";
-import { ILayout, IPageNotFound, ISectionNotFound } from "../types/generated/contentful";
+import { ILayout, ISectionNotFound } from "../types/generated/contentful";
 import Layout from "../components/Layout";
 import RedirectSection from "../components/RedirectSection";
 
