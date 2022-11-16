@@ -13,12 +13,12 @@ type MetaProps = {
 };
 
 function Meta({ noindex, nofollow }: MetaProps) {
-  const { locale } = useRouter();
+  const { locale, pathname } = useRouter();
 
   const seo: NextSeoProps = {
-    canonical: `https://bor-kur.pl/${Locales.pl}`,
+    canonical: `https://bor-kur.pl/${pathname}`,
     languageAlternates: [
-      { hrefLang: Locales.en, href: `https://bor-kur.pl/${Locales.en}` },
+      { hrefLang: Locales.en, href: `https://bor-kur.pl/${Locales.en}${pathname}` },
     ],
     openGraph: {
       type: "website",
@@ -67,7 +67,7 @@ function Meta({ noindex, nofollow }: MetaProps) {
       "Nasze zaangażowanie w chów i hodowlę zapewnia najlepsze warunki rozwoju, a dobrostan i zdrowie stad są dla nas priorytetem.",
     openGraph: {
       locale: Locales.pl,
-      url: `https://bor-kur.pl`,
+      url: `https://bor-kur.pl${pathname}`,
     },
     additionalMetaTags: [
       {
@@ -84,7 +84,7 @@ function Meta({ noindex, nofollow }: MetaProps) {
       "Our commitment to breeding and rearing ensures the best conditions for growth, and the welfare and health of the herds are our top priority.",
     openGraph: {
       locale: Locales.en,
-      url: `https://bor-kur.pl/${Locales.en}`,
+      url: `https://bor-kur.pl/${Locales.en}${pathname}`,
     },
     additionalMetaTags: [
       {
