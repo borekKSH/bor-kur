@@ -8,9 +8,11 @@ module.exports = {
         container: '90rem',
         'container-padding': '69.375rem',
       },
+      screens: {
+        'md': "830px", 
+      },
     },
     fontFamily: {
-      cursive: "'Fuzzy Bubbles', cursive;",
       'sans-serif': "'Lato', sans-serif",
     },
   },

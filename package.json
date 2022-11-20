@@ -20,6 +20,7 @@
     "contentful-management": "^10.18.2",
     "contentful-typescript-codegen": "^3.2.3",
     "formik": "^2.2.9",
+    "framer-motion": "^7.6.7",
     "hamburger-react": "^2.5.0",
     "jsonwebtoken": "^8.5.1",
     "next": "12.3.1",

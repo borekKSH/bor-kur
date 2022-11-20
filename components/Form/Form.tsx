@@ -98,7 +98,7 @@ function Form({ content }: FormProps) {
             emptyFieldMessage}
         </ErrorLabel>
       </div>
-      <div className="grid sm:grid-cols-2 sm:gap-4">
+      <div className="grid sm:grid-cols-2 gap-8 sm:gap-4">
         <div className="relative">
           <Label htmlFor="email">{email}</Label>
           <Input

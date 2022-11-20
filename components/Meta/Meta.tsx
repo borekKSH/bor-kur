@@ -72,7 +72,8 @@ function Meta({ noindex, nofollow }: MetaProps) {
     additionalMetaTags: [
       {
         name: "keywords",
-        content: "chów, hodowla, kury, kurczaki, drób, drob, mięso, farma, ferma",
+        content:
+          "chów, hodowla, kury, kurczaki, drób, drob, mięso, farma, ferma, bor, kur, borkur",
       },
     ],
   };
@@ -89,7 +90,8 @@ function Meta({ noindex, nofollow }: MetaProps) {
     additionalMetaTags: [
       {
         name: "keywords",
-        content: "farming, breeding, hens, chickens, poultry, poultry, meat, farm",
+        content:
+          "farming, breeding, hens, chickens, poultry, poultry, meat, farm, bor, kur, borkur",
       },
     ],
   };

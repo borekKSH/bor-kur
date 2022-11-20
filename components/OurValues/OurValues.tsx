@@ -1,6 +1,8 @@
 import React from "react";
+import { motion } from "framer-motion";
 import OurValuesCard from "./OurValuesCard";
 import { ISectionOurValues } from "../../types/generated/contentful";
+import { fadeInFromTop, wrapperAnimationProps } from "../../utils/animations";
 
 import imagePeople from "../../public/images/values-people.jpg";
 import imageGrowth from "../../public/images/values-growth.jpg";
@@ -29,17 +31,22 @@ function OurValues({ content }: OurValuesProps) {
   } = content.fields;
 
   return (
-    <section
-      className="z-20 w-full min-h-screen bg-yellow-100 dark:bg-neutral-800 transition"
+    <motion.section
+      {...wrapperAnimationProps}
+      className="z-20 w-full min-h-screen bg-yellow-100 dark:bg-neutral-800 transition-colors"
       aria-label={title}
       id="values"
     >
       <div className="w-full px-8 py-24 mx-auto max-w-container grid gap-11 place-items-center xl:gap-24">
-        <h2 className="text-4xl font-bold tracking-tight text-center text-neutral-900 transition dark:text-white sm:text-6xl xl:text-7xl">
+        <motion.h2
+          variants={fadeInFromTop}
+          className="text-4xl font-bold tracking-tight text-center text-neutral-900 transition-colors dark:text-white sm:text-6xl xl:text-7xl"
+        >
           {title}
-        </h2>
+        </motion.h2>
         <article className="grid grid-cols-1 gap-10 max-w-[20rem] place-items-center lg:grid-cols-3 lg:gap-16 lg:max-w-none">
           <OurValuesCard
+            variants={fadeInFromTop}
             title={peopleTitle}
             paragraph={peopleParagraph}
             alt={peopleImageAlternativeText}
@@ -47,6 +54,7 @@ function OurValues({ content }: OurValuesProps) {
             icon={iconPeople}
           />
           <OurValuesCard
+            variants={fadeInFromTop}
             title={growthTitle}
             paragraph={growthParagraph}
             alt={growthImageAlternativeText}
@@ -54,6 +62,7 @@ function OurValues({ content }: OurValuesProps) {
             icon={iconGrowth}
           />
           <OurValuesCard
+            variants={fadeInFromTop}
             title={qualityTitle}
             paragraph={qualityParagraph}
             alt={qualityImageAlternativeText}
@@ -62,7 +71,7 @@ function OurValues({ content }: OurValuesProps) {
           />
         </article>
       </div>
-    </section>
+    </motion.section>
   );
 }
 
