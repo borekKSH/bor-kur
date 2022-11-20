@@ -5,12 +5,6 @@
 @tailwind utilities;
 
 @layer base {
-  /* *,
-  *::before,
-  *::after {
-    outline: 1px dashed magenta;
-  } */
-
   html {
     scroll-behavior: smooth;
   }
@@ -40,9 +34,5 @@
 @layer utilities {
   .trapezoid {
     clip-path: polygon(20% 0%, 100% 0, 100% 100%, 0% 100%);
-  }
-
-  .parallelogram {
-    clip-path: polygon(25% 0%, 100% 0%, 75% 100%, 0% 100%);
   }
 }

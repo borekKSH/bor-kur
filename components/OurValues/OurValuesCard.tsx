@@ -22,7 +22,10 @@ function OurValuesCard({
   variants = {},
 }: OurValuesCardProps) {
   return (
-    <motion.figure variants={variants} className="flex flex-col items-center gap-12">
+    <motion.figure
+      variants={variants}
+      className="flex flex-col items-center gap-12"
+    >
       <div className="relative w-80 h-80">
         <Image style={{ borderRadius: "50%" }} src={image} alt={alt} fill />
         <i className="absolute bottom-0 w-24 h-24 bg-white rounded-full grid place-items-center left-1/2 -translate-x-1/2 translate-y-1/4">

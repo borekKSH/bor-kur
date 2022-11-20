@@ -1,6 +1,6 @@
 /** @type {import('next-sitemap').IConfig} */
 module.exports = {
-  siteUrl: process.env.SITE_URL || 'https://karolbinkowski.me',
+  siteUrl: process.env.SITE_URL || 'https://bor-kur.pl/',
   generateRobotsTxt: true,
   robotsTxtOptions: {
     policies: [
