@@ -1,3 +1,5 @@
+/* eslint-disable react/no-array-index-key */
+
 import React from "react";
 import Image, { StaticImageData } from "next/future/image";
 import { motion } from "framer-motion";
@@ -34,8 +36,10 @@ function ImageCtaSection({ id, title, paragraph, image, alt }: ImageCtaSectionPr
             {title}
           </motion.h2>
           <motion.p className="text-sm grid gap-6 sm:gap-7 text-neutral-600 transition-colors dark:text-neutral-200 sm:text-base xl:text-lg">
-            {paragraph.split("\n").map((item) => (
-              <motion.span variants={fadeInFromLeft} key={item}>
+            {paragraph.split("\n").map((item, index) => (
+              //  Using item as a key causes a rerender and makes the translated content disappear
+              //  since it's causing all the motion.spans to be in the initial state and not animated.
+              <motion.span variants={fadeInFromLeft} key={index}>
                 {item}
               </motion.span>
             ))}
